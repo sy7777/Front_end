@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+
+            /* 过渡动画 过渡属性 过渡时间 */
+            /* transition: width 2s; */
+            /* 设置过渡效果的属性 */
+            transition-property: width;
+            /* 设置过渡效果的时长 */
+            transition-duration: 3s;
+            /* 设置过渡效果的默认值是ease，从慢到快在慢下来 */
+            transition-timing-function: ease;
+        }
+
+        #d1:hover{
+            width: 800px;
+            height: 100px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+</body>
+</html>

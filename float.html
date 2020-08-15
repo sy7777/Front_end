@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            width: 800px;
+           /* 1. 设置高度可解决浮动 */
+            /* height: 200px; */
+        }
+        .child{
+            display: block;
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+            float: left;
+        }
+        /* 2. 清楚浮动 */
+        .clear{
+            clear: both;
+        }
+        /* 3. 创建伪元素 */
+        /* .parent::after{ */
+        .clear::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="parent clear">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <!-- <div class="clear"></div> -->
+
+    </div>
+    <h1>Hello World</h1>
+</body>
+</html>

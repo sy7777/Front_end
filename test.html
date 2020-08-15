@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning</title>
+    <style>
+        img{
+            width: 660px;
+            height: 500px;
+            display: block;
+            margin: 0 auto;
+            transition: all 3s; 
+
+        }
+        /* 鼠标放上去无特效 */
+        img:hover{
+            -webkit-filter: none;
+            filter: none;
+
+        }
+
+        .img1{
+
+            /* 滤镜属性 
+            grayscale(1是百分百，0 是0 )
+            */
+            -webkit-filter:grayscale(1); 
+            filter:blur(10px) brightness(10px) grayscale(1);
+                     
+        }
+            /* 滤镜属性
+            亮度 */
+        .img2{
+            -webkit-filter: brightness(0.5); 
+            filter: brightness(0.5);
+             
+        }
+        .img3{
+
+            /* 滤镜属性 
+            grayscale(1是百分百，0 是0 )
+            */
+            -webkit-filter:blur(10px) brightness(10px) grayscale(0.5); 
+            filter:blur(10px) brightness(10px) grayscale(0.5);
+         
+}
+
+    </style>
+</head>
+<body>
+    <form action="https://www.google.com/search" method="get">
+        <input type="text" name="q" placeholder=" Search the movie"/>
+        <input type="submit" value="search" />
+    </form>
+
+    <img class=“img1” src="img/selfie.jpg" alt="photo" srcset=""/>
+    <img class="img2" src="img/selfie.jpg" alt="photo" srcset=""/>
+    <img class="img3" src="img/selfie.jpg" alt="photo" srcset=""/>
+</body>
+</html>
