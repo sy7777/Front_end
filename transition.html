@@ -12,17 +12,22 @@
             /* 过渡动画 过渡属性 过渡时间 */
             /* transition: width 2s; */
             /* 设置过渡效果的属性 */
-            transition-property: width;
+            transition-property: width,background;
             /* 设置过渡效果的时长 */
             transition-duration: 3s;
-            /* 设置过渡效果的默认值是ease，从慢到快在慢下来 */
+            /* 设置过渡效果的默认值是ease，从慢到快在慢下来
+            liner是一直匀速
+            ease-in是慢近快出 
+            可通过浏览器贝塞尔曲线 cubic-bezir调节*/
             transition-timing-function: ease;
+            /* 延迟效果的设定 */
+            transition-delay: 3s;
         }
 
         #d1:hover{
             width: 800px;
             height: 100px;
-            background: skyblue;
+            background: orange;
         }
     </style>
 </head>
