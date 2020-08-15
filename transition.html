@@ -11,7 +11,7 @@
 
             /* 过渡动画 过渡属性 过渡时间 */
             /* transition: width 2s; */
-            /* 设置过渡效果的属性 */
+            /* 设置过渡效果的属性 也可以写成all，所有属性都过渡*/
             transition-property: width,background;
             /* 设置过渡效果的时长 */
             transition-duration: 3s;
@@ -21,7 +21,7 @@
             可通过浏览器贝塞尔曲线 cubic-bezir调节*/
             transition-timing-function: ease;
             /* 延迟效果的设定 */
-            transition-delay: 3s;
+            transition-delay: 1s;
         }
 
         #d1:hover{
@@ -29,9 +29,24 @@
             height: 100px;
             background: orange;
         }
+        #d2{
+            width: 300px;
+            height: 400px;
+            margin:20px auto;
+            background: blanchedalmond;
+            box-shadow: 0 0 0px #ccc;
+            transition: all 0.5s;
+        }
+
+        #d2:hover{
+
+            box-shadow: 0 5px 10px #999;
+        }
     </style>
 </head>
 <body>
     <div id="d1"></div>
+    <div id="d2"></div>
+
 </body>
 </html>
