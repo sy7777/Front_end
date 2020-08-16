@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1{
+            width: 300px;
+            height: 300px;
+            border: 1px solid #999;
+        }
+        #bgy:checked~.d1{
+            background: yellow;
+        }
+        #bgr:checked~.d1{
+            background: red;
+        }
+        #bgg:checked~.d1{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <input type="text" name="username" value=""/>
+        <input type="password" name="password" value=""/>
+        <hr>
+        <!-- name值相同，则为同1个选项，只会选择一个，radio单选 -->
+        Male <input type="radio" name="Gender" id="" value="Male">
+        Female <input type="radio" name="Gender" id="" value="Female">
+        <hr>
+        <h3> 请选择你喜欢的城市</h3>
+        <input type="checkbox" name="city" id="" value="chengdu">
+        <input type="checkbox" name="city" id="" value="beijing">
+        <input type="checkbox" name="city" id="" value="shenzhen">
+        <input type="checkbox" name="city" id="" value="shanghai">
+        <input type="checkbox" name="city" id="" value="guangzhou">
+        <hr>
+        <input type="submit" value="Register">
+    </form>
+    <!-- label标签可以绑定输入框
+    用for绑定选项框ID
+    -->
+    <label for="bgy">
+        选择黄色
+    </label>
+    <h3>请选择你喜欢的颜色</h3>
+    黄色 <input type="radio" name="color" id="bgy" value="Yellow" hidden="hidden">
+    红色 <input type="radio" name="color" id="bgr" value="Red">
+    绿色 <input type="radio" name="color" id="bgg" value="Green">
+    <div class="d1"></div>
+</body>
+</html>

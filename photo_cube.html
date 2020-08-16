@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/lifang.css">
+    <title>Photo Cube Show</title>
+
+</head>
+<body>
+    <!-- <div id="d1"></div> -->
+    <!-- 如果不写name值，则会同事多选很多歌选项 -->
+    <input type="radio" id="front"  hidden="hidden" name="option">
+    <input type="radio" id="back"  hidden="hidden" name="option">
+    <input type="radio" id="left"  hidden="hidden" name="option">
+    <input type="radio" id="right" hidden="hidden" name="option">
+    <input type="radio" id="top" hidden="hidden" name="option">
+    <input type="radio" id="bottom" hidden="hidden" name="option">
+    <input type="radio" id="big" hidden="hidden" name="option">
+    <input type="radio" id="small" hidden="hidden"name="option">
+    <div class="lifang">
+        <div class="page front"></div>
+        <div class="page back"></div>
+        <div class="page left"></div>
+        <div class="page right"></div>
+        <div class="page top"></div>
+        <div class="page bottom"></div>
+    </div>
+    <div class="choose">
+        <label for="front" class="btn">Front</label>
+        <label for="back" class="btn">Back</label>
+        <label for="left" class="btn">Left</label>
+        <label for="right" class="btn">Right</label>
+        <label for="top" class="btn">Top</label>
+        <label for="bottom" class="btn">Bottom</label>
+        <label for="big" class="btn">Big</label>
+        <label for="small" class="btn">Small</label>
+    </div>
+</body>
+</html>
