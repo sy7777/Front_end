@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=., initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            /* 为弹性容器 */
+            display: flex;
+
+            /* 设置方向 :默认row colum*/
+            /* flex-direction: column; */
+
+            /* 设置主轴内容分布
+            flex-start：默认向开始端靠拢
+            flex-end:在末尾
+            space-around space-between space-evenly平均分布 */
+            justify-content: center;
+
+            /* 侧轴分布 */
+            align-items: center;
+            margin: 0 auto;
+            width: 800px;
+            height: 800px;
+            border: 1px solid blue;
+        }
+
+        /* child为弹性子元素，子元素的子元素不是弹性子元素 */
+        .child{
+            width: 200px;
+            height: 200px;
+        }
+
+        .c1{
+            background: skyblue;
+        }
+        .c2{
+            background: orange;
+        }
+        .c3{
+            background: orchid;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child c1">
+            <!-- 不是弹性子元素 -->
+            <h1>Hello</h1>
+        </div>
+        <div class="child c2"></div>
+        <div class="child c3"></div>
+    </div>
+</body>
+</html>
