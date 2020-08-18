@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            /* 固定定位不管怎么滚动鼠标，固定不变，脱离原来的空间
+            其他div会代替原来的位置 */
+            /* position:fixed; */
+
+            /* 相对定位：相对于自己当前定位，不脱离文档流 */
+            /* position:relative; */
+
+            /* 绝对定位,相对比于父级定义了位置的元素，会脱离原来的空间
+             */
+            position: absolute;
+            right: 10px;
+            top: 100px;
+        }
+        #d2{
+            width: 300px;
+            height: 1000px;
+            background: purple;
+        }
+        #d3{
+            width: 300px;
+            height: 300px;
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+</body>
+</html>

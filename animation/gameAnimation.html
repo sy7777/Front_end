@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Animation</title>
+    <style>
+        #d1{
+            width: 300px;
+            height: 170px;
+            /* border: 1px solid #ccc; */
+            background-image: url(img/mingren.png);
+            background-size: auto;
+            /* 位置x, y 指 */
+            /* background-position: 0 0; */
+            /* animation: lxh 2s linear infinite; */
+            
+            /* steps是指阶段性放帧数，有多少个画面，写多少帧 */
+            /* animation: lxh 2s steps(16) infinite; */
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+        @keyframes lxh{
+            from{
+                background-position: 0 0;
+            }to{
+                background-position: 0 -3072;
+            }
+        }
+        #mingren:checked~#d1{
+            animation: lxh 2s steps(16) infinite;
+        }
+
+        #d2{
+            width: 300px;
+            height: 170px;
+            /* border: 1px solid #ccc; */
+            background-image: url(img/qianniao.png);
+            /* 元素宽度百分比并不是图片本身的百分比！！！！ */
+            background-size: 960px auto;
+            /* 位置x, y 指 */
+            /* background-position: 0 0; */
+            /* animation: lxh 2s linear infinite; */
+            
+            /* steps是指阶段性放帧数，有多少个画面，写多少帧 */
+            animation: qn 2s steps(13) infinite;
+            position: absolute;
+            left: 60px;
+            top: 75px;
+        }
+        @keyframes qn{
+            from{
+                background-position: 0 0;
+            }to{
+                /* 上面Bg-size扩大多少倍，坐标相应扩大多少倍，
+                例如该像素坐标 X 2.7倍 */
+                background-position: 0 -2496px;
+            }
+        }
+        .main{
+            width: 800px;
+            height: 200px;
+            margin: 0 auto;
+            border: 2px solid chocolate;
+            position: relative;
+        }
+        label{
+            margin: 90px 90px auto;
+            display: inline-block;
+            padding: 8px 8px;
+            font-size: 20px;
+            cursor: pointer;
+            text-align: center;   
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px #999;
+        }
+
+        label:hover {
+            background-color: #3e8e41
+        }
+
+        label:active {
+            background-color: #3e8e41;
+            box-shadow: 0 2px #666;
+            transform: translateY(2px);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main">
+        <input type="checkbox" name="" id="mingren" hidden="hidden">
+        <div id="d1"></div>
+        <div id="d2"></div>
+    </div>
+    <label for="mingren">发射</label>
+    <!-- <input type="checkbox" name="" id="mingren"> -->
+
+</body>
+</html>

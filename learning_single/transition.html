@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            background: skyblue;
+
+            /* 过渡动画 过渡属性 过渡时间 */
+            /* transition: width 2s; */
+            /* 设置过渡效果的属性 也可以写成all，所有属性都过渡*/
+            transition-property: width,background;
+            /* 设置过渡效果的时长 */
+            transition-duration: 3s;
+            /* 设置过渡效果的默认值是ease，从慢到快在慢下来
+            liner是一直匀速
+            ease-in是慢近快出 
+            可通过浏览器贝塞尔曲线 cubic-bezir调节*/
+            transition-timing-function: ease;
+            /* 延迟效果的设定 */
+            transition-delay: 1s;
+        }
+
+        #d1:hover{
+            width: 800px;
+            height: 100px;
+            background: orange;
+        }
+        #d2{
+            width: 300px;
+            height: 400px;
+            margin:20px auto;
+            background: blanchedalmond;
+            box-shadow: 0 0 0px #ccc;
+            transition: all 0.5s;
+        }
+
+        #d2:hover{
+
+            box-shadow: 0 5px 10px #999;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+
+</body>
+</html>
