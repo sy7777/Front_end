@@ -18,10 +18,36 @@
             margin: 0;
         }
         #d1{
-            width: 375px;
-            height: 375px;
+            width: 50%;
+            height: 200px;
             background: skyblue;
         }
+        /* 媒体查询
+        小于600px 移动端 */
+        @media only screen and (max-width: 600px){
+            #d1{
+                width: 100%;
+                background: red;
+            }
+        }
+        /* 大于1200px PC端*/
+        @media only screen and (min-width: 1000px){
+            #d1{
+                width: 50%;
+                background: purple;
+            }
+            
+        }
+        /* 大于1200px PC端*/
+        @media only screen and (min-width: 600px) and (max-width: 1000px){
+            #d1{
+                width: 33%;
+                background: greenyellow;
+            }
+            
+        }
+        
+        
         #d2{
             width: 750px;
             height: 375px;
@@ -30,6 +56,7 @@
     </style>
 </head>
 <body>
+    <!-- 大屏幕PC端D1占据50%屏幕的宽度，大屏幕占据100% -->
     <div id='d1'></div>
     <div id='d2'></div>
 </body>
