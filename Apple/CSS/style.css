@@ -55,10 +55,20 @@
     transform-origin: left center;
     
 }
+.navpage{
+    display: none;
+}
 /* 小于768px的屏幕 */
+
 @media only screen  and (max-width:768px){
+    /* .toggleBtn{
+      position: relative;
+      z-index: 100;
+    } */
     .toggleBtn .line{
         display: block;
+        position: relative;
+      z-index: 100;
     }
     .nav .text, .nav .search{
         display: none;
@@ -66,6 +76,7 @@
     .nav{
         /* 两边靠拢没有间距 */
         justify-content: space-between;
+
     }
     .nav .toggleBtn {
         /* 排序 */
@@ -73,6 +84,8 @@
     }
     .nav .logo {
         order: 2;
+        position: relative;
+        z-index: 100;
     }
     .nav .buy {
         order: 3;
@@ -86,5 +99,53 @@
     #choose:checked~.toggleBtn .line:nth-child(2){
         transform: rotate(-45deg);
         
+    }
+    /*选中状态，导航页面显示  */
+    #choose:checked~.navpage{
+        display: flex;
+        /* VW: viewport width:100vw == 100%viewport width
+            vh: viewport height:100vh == 100%viewport height */
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background: #000;
+        color: aliceblue;
+        flex-direction: column;
+        padding-top: 54px;
+
+    }
+    .searchInput{
+        margin: 0 28px 20px;
+        display: flex;
+        align-items: center ;
+        justify-content: flex-start;
+        border-radius: 4px;
+        height: 36px;
+        color: #cccccc;
+        background: rgba(49, 48, 48, 0.76);
+    }
+    .searchInput .icon{
+        width: 32px;
+        height: 36px;
+        background-image: url(../img/search.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .searchInput input{
+        flex: 1;
+        margin: 0 10px;
+        height: 100%;
+        background-color: transparent;
+        /* 去掉边框 */
+        border: none;
+        /* 去掉鼠标点击显示的边框 */
+        outline: none;
+        color: aliceblue;
+    }
+    hr{
+        border-color: #333;
+        margin: 10px 10px;
     }
 } 
