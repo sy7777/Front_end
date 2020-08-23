@@ -148,4 +148,22 @@
         border-color: #333;
         margin: 10px 10px;
     }
+    .navList{
+        margin: 0 28px;
+        /* padding:  28 0px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .navList a{
+        width: 100%;
+        height: 44px;
+        color: #fff;
+        text-align: left;
+        border-bottom: 1px solid #333;
+        line-height: 44px;
+    }
+    .navList a:last-child{
+        border-bottom: none;
+    }
 } 
