@@ -66,6 +66,18 @@
       position: relative;
       z-index: 100;
     } */
+    .navpage{
+        display: flex;
+        z-index: 3;
+        height: 0vh;
+        width: 100vw;
+        transition: all .4s;
+        overflow: hidden;
+        position: fixed;
+        left: 0;
+        top: 0;
+        background-color: #000;
+    }
     .toggleBtn .line{
         display: block;
         position: relative;
