@@ -12,7 +12,7 @@
 
 }
 .swiper{
-    width: 375px;
+    width: 100%;
     height: 188px;
     background-image: url(../img/1.jpg);
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@
     position: relative;
 }
 .iconList{
-    width: 375px;
+    width: 100%;
     height: 187px;
     display: flex;
     /* 可以换行 */
@@ -28,7 +28,7 @@
 
 }
 .line1{
-    width: 375px;
+    width: 100%;
     height: 72px;
     display: flex;
     align-items: flex-start;
@@ -36,7 +36,7 @@
     justify-content: space-around;
 }
 .line2{
-    width: 375px;
+    width: 100%;
     height: 72px;
     display: flex;
     align-items: flex-start;
@@ -60,15 +60,15 @@
 }
 /* banner */
 .banner{
-    width: 375px;
-    height: 265px;
+    width: 100%;
+    height: 28rem;
     margin-top: 8px;
     display: flex;
     /* justify-content: space-between; */
 }
 .banner .lbanner, .banner .rbanner{
-    width: 186px;
-    height: 386px;
+    width: 50%;
+    height: 27rem;
 
 }
 .banner .lbanner{
@@ -85,19 +85,20 @@
     align-items: center;
 }
 .banner .rbanner .rtbanner, .rbbanner{
-    width: 186px;
-    height: 193px;
+    width: 100%;
+    height: 50%;
     background: rgba(218, 218, 218, 0.377);
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
     align-items: center;
+    top: 0;
     
 }
 .rtbanner img, .rbbanner img{
     /* background-image: url(../img/mi2.webp); */
-    width: 130px;
-    height: 100px;
+    width: 70%;
+    height: 50%;
     background-size: 100% 100%;
     background-repeat: no-repeat; 
 }
@@ -134,7 +135,7 @@
     bottom: 0px;
     left: 0px;
     height: 50px;
-    width: 375px;
+    width: 100%;
     background-color: rgb(255, 255, 255);
     /* display: none; */
 }
