@@ -13,7 +13,25 @@ while(n<100){
     // n先加在输出
     console.log("while+"+n);
 } */
-for(m=0;m<100;m++){
+/* for(m=0;m<100;m++){
     // 先满足条件循环，在m增加
     console.log("for"+m);
+} */
+
+//break循环跳出整个大循环
+/* for (i=0; i<10; i++){
+    if(i==5){
+        break;
+    }
+    console.log(i);
 }
+console.log("循环结束/+"+i);//输出0，1,2,3,4,循环结束+5 */
+
+//continue跳出当前循环
+for (i=0; i<10; i++){
+    if(i==5){
+        continue;
+    }
+    console.log(i);
+}
+console.log("循环结束/+"+i);//输出0，1，2，3，4，6……9，循环结束/+10
