@@ -245,11 +245,32 @@ for (var i = 0; i < data.length; i++) {
   var newsItem = data[i];
   var title = newsItem.title;
   const source_url = newsItem.source_url;
-  //console.log(title);
-  const h1 = document.createElement("h1");
+  const image_list = newsItem.image_list;
+  // console.log(image_list);
+  if(image_list){
+    /* for( var j = 0; j < image_list.length; j++){
+      var image_url = image_list[j]; */
+      var image_url = image_list[0];
+      console.log(image_url);
+      const h1 = document.createElement("h1");
+      const a = document.createElement("a");
+      const img =document.createElement("img");
+      a.innerText = title;
+      a.href = `https://toutiao.com${source_url}`
+      img.src = image_url;
+      h1.appendChild(a);
+      div.appendChild(h1);
+      div.appendChild(img); 
+    }
+  }
+  // console.log(image_url);
+/*   const h1 = document.createElement("h1");
   const a = document.createElement("a");
+  const img =document.createElement("img");
   a.innerText = title;
   a.href = `https://toutiao.com${source_url}`
+  img.src = `https://toutiao.com${image_url}`
   h1.appendChild(a);
   div.appendChild(h1);
-}
+  div.appendChild(img); */
+// }
