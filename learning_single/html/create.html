@@ -3,12 +3,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .redBag{
+            width: 12rem;
+            background-color: red;
+            color: whitesmoke;
+        }
+/*         .animation1{
+            width: 15rem;
+            height: 15rem;
+            background-color: skyblue;
+            animation: donghua 3s alternate infinite;
+        }
+        @keyframes donghua {
+           from{
+               transform: translate(0, 0);
+           } to {
+            transform: translate(30rem, 15rem);
+           }
+        } */
+    </style>
 </head>
 <body>
     <div class="d1">Hello1</div>
     <div class="d2">Hello2</div>
     <div class="d3">Hello3</div>
     <div class="d4">Hello4</div>
+    <div id="d5">Hello Id</div>
 
     <script>
         //创建元素
@@ -22,26 +43,59 @@
         //插入元素,找到插入元素
         var d1 = document.querySelector(".d1");
         d1.appendChild(h1)
+        //通过修改style修改样式
+        d1.style.width = "400px";
+        d1.style.backgroundColor = "yellow";
 
         //插入在节点前面
         var img = document.createElement("img");
         img.src = "../img/selfie.jpg";
-        //img.style.width : 512px;
+        img.style.width = "512px";
         console.log(img);
 
         //找到被插入的父元素
         var body = document.querySelector("body");
         //在body的D3前插入
         var d3 = document.querySelector(".d3");
+        //通过修改类名修改样式
+        d3.className = "redBag";
         body.insertBefore(img,d3);
 
         //删除元素，也要找到父元素，找到要删除元素
         //d2.parentElement.removeChild()
         var d2 = document.querySelector(".d2");
         body.removeChild(d2);
+        
 
         var d4 = document.querySelector(".d4");
         d4.appendChild(img);
+
+        //获取ID属性
+        var id1 = document.querySelector("#d5");
+/*         console.log(id1);
+        console.log(id1.id);
+        console.log(id1['id']);
+        console.log(id1.getAttribute("id")); */
+
+        id1.className = "animation1";
+        //3.通过增加style标签
+        var style = document.createElement("style");
+        style.innerHTML = `
+        .animation1{
+            width: 15rem;
+            height: 15rem;
+            background-color: skyblue;
+            animation: donghua 3s alternate infinite;
+        }
+        @keyframes donghua {
+           from{
+               transform: translate(0, 0);
+           } to {
+            transform: translate(30rem, 15rem);
+           }
+        }`
+        id1.appendChild(style);
+        //innertext只获取文本，innerHTML包括标签
 
     </script>
 </body>
