@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World1</h1>
+    <h1>Hello World2</h1>
+    <h1 id="abc">Hello World3</h1>
+    <h1 class="cba">Hello World4</h1>
+    <h1 class="cba">Hello World5</h1>
+    <script>
+        //包含所有H1
+        var cba = document.querySelector("h1:nth-child(4)");
+        console.log(cba);
+
+        var cbas = document.querySelectorAll(".cba");
+        cbas.forEach(function(item, i, arr){
+            item.style.background = "yellow";
+        })
+    </script>
+</body>
+</html>
