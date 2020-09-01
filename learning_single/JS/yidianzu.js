@@ -132,18 +132,42 @@ var contentArray = {
   ],
 };
 
-var div = document.querySelector('#content');
+//var div = document.querySelector('#content');
 var data = contentArray.data;
-for(var i = 0; i < data.length; i++){
+var title = data.query
+console.log(data);
+//item是指每个元素{}，i是指索引
+data.forEach(function(item,i,arr){
+  console.log(item);
+  console.log(i);
+})
+
+//加工和改进原数组
+var newArr = data.map(function(item, index){
+  item.query = item.query + "产品"
+  return item;
+})
+console.log(newArr);
+
+//过滤掉不符合条件的元素
+var guolv = data.filter(function(item,i,arr){
+  if(parseFloat(item.id)>4){
+    return true;
+  }else{
+    return false;
+  }
+})
+console.log(guolv);
+/* for(var i = 0; i < data.length; i++){
     dataItem = data[i];
     var query = dataItem.query;
-    console.log(query);
+    console.log(query); */
 /*     var h1 = document.createElement("h1");
     const a = document.createElement("a"); */
-    div.innerText = `titile${query}`;
+    // div.innerText = `titile${query}`;
 /*     a.href = dataItem.url;
     h1.appendChild(a);
     div.appendChild(h1); */
-}
+// }
 
 // div.innerText = data.query[1];
