@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="d1">Hello1</div>
+    <div class="d2">Hello2</div>
+    <div class="d3">Hello3</div>
+    <div class="d4">Hello4</div>
+
+    <script>
+        //创建元素
+        var h1 = document.createElement("h1");
+        console.log(h1);
+        console.log(typeof h1)
+
+        //设置元素
+        h1.innerHTML = "What do you want to eat?"
+
+        //插入元素,找到插入元素
+        var d1 = document.querySelector(".d1");
+        d1.appendChild(h1)
+
+        //插入在节点前面
+        var img = document.createElement("img");
+        img.src = "../img/selfie.jpg";
+        //img.style.width : 512px;
+        console.log(img);
+
+        //找到被插入的父元素
+        var body = document.querySelector("body");
+        //在body的D3前插入
+        var d3 = document.querySelector(".d3");
+        body.insertBefore(img,d3);
+
+        //删除元素，也要找到父元素，找到要删除元素
+        //d2.parentElement.removeChild()
+        var d2 = document.querySelector(".d2");
+        body.removeChild(d2);
+
+        var d4 = document.querySelector(".d4");
+        d4.appendChild(img);
+
+    </script>
+</body>
+</html>
