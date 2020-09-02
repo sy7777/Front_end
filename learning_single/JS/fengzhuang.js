@@ -16,12 +16,12 @@ args:{
 }
 */
 
-function lcAlert(args){
+export function lcAlert(args){
     var zhezhao = document.createElement("div");
     var body = document.querySelector("body");
     zhezhao.className = "zhezhao";
         zhezhao.innerHTML = `
-        <div class="alert">
+        <div class="alert animate__animated animate__slideInDown ">
         <div class="header"><span class="title">${args.title}</span><span class="close">x</span></div>
         <div class="main">${args.content}</div>
         <div class="btnList">

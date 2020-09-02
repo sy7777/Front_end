@@ -22,6 +22,7 @@
     background: #fff;
     display: flex;
     flex-direction: column;
+    transition: all 2s;
 }
 
 .alert>.header{
@@ -44,13 +45,15 @@
 .alert>.header>.close:hover{
     color: salmon;
 }
-.alert>.header>.main{
+.alert>.main{
     flex: 1;
     padding: 30px;
     height: 300px;
-    width: 150px;
+    width: 100%;
     border-bottom: 1px solid #ccc;
-    background-color: coral;
+    background-color: rgb(236, 208, 198);
+    font-size: 2rem;
+    margin:0 0;
 }
 .alert>.btnList{
     height: 80px;

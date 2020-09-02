@@ -10,7 +10,12 @@
 <body>    
     <button type="button">是否跳转到百度？</button>
 
-    <script>
+    <script type="module">
+
+        import {getDom} from "../JS/util.js";
+        console.log(getDom("button"));
+
+
         var btn = document.querySelector("button");
         btn.onclick = function(){
             lcAlert({
@@ -27,6 +32,7 @@
 
             })
         }
+
     </script>
 </body>
 </html>
