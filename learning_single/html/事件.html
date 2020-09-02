@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/tankuang.css">
+    <style>
+        #d1{
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+
+    </div>
+    <button type="button">点击改变颜色</button>
+
+    <!-- .zhezhao>.alert>(.header>(span.title{温馨提示})+span.close{x}+.main+(.btnList>.btn*2)) -->
+<!--     <div class="zhezhao">
+        <div class="alert">
+            <div class="header"><span class="title">温馨提示</span><span class="close">x</span></div>
+            <div class="main">【第三方产品责任】除小米之外的其他第三方卖家通过小米平台销售商品</div>
+            <div class="btnList">
+                <div class="btn">确定</div>
+                <div class="btn">取消</div>
+            </div>
+        </div>
+    </div> -->
+    
+    <button type="button"> 弹框</button>
+
+    <script>
+        var btn = document.querySelector("button");
+        console.log([btn]);
+        btn.onclick = function(){
+            var d1 = document.querySelector("#d1");
+            if (d1.style.backgroundColor ==  "pink"){
+                d1.style.backgroundColor =  "aqua";
+            }else{
+                d1.style.backgroundColor =  "pink";
+            }           
+        }
+
+        //2.弹框
+        var btnTan = document.querySelector("button:nth-child(3)")
+        //console.log(document.querySelector("button"))
+        //console.log(btnTan);
+        btnTan.onclick = function(){
+            var zhezhao = document.createElement("div");
+            zhezhao.className = "zhezhao";
+            zhezhao.innerHTML = `
+            <div class="alert">
+            <div class="header"><span class="title">温馨提示</span><span class="close">x</span></div>
+            <div class="main">【第三方产品责任】除小米之外的其他第三方卖家通过小米平台销售商品</div>
+            <div class="btnList">
+                <div class="btn">确定</div>
+                <div class="btn">取消</div>
+            </div>
+        </div>
+            `;
+            var body = document.querySelector("body");
+            body.appendChild(zhezhao);
+
+            //获取关闭事件
+            var closeDiv = document.querySelector(".close");
+            closeDiv.onclick = function(){
+                body.removeChild(zhezhao);
+            }
+        }
+    </script>
+</body>
+</html>
