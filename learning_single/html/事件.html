@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/tankuang.css">
+    <script src="../JS/tankuang.js"></script>
     <style>
         #d1{
             width: 300px;
@@ -33,7 +34,7 @@
     <button type="button"> 弹框</button>
 
     <script>
-        var btn = document.querySelector("button");
+ /*        var btn = document.querySelector("button");
         console.log([btn]);
         btn.onclick = function(){
             var d1 = document.querySelector("#d1");
@@ -54,10 +55,10 @@
             zhezhao.innerHTML = `
             <div class="alert">
             <div class="header"><span class="title">温馨提示</span><span class="close">x</span></div>
-            <div class="main">【第三方产品责任】除小米之外的其他第三方卖家通过小米平台销售商品</div>
+            <div class="main">【第三方产品责任】是否添加一个蓝色DIV？</div>
             <div class="btnList">
-                <div class="btn">确定</div>
-                <div class="btn">取消</div>
+                <div class="btn yes">确定</div>
+                <div class="btn no">取消</div>
             </div>
         </div>
             `;
@@ -69,7 +70,25 @@
             closeDiv.onclick = function(){
                 body.removeChild(zhezhao);
             }
-        }
+
+            var yes = document.querySelector(".btn.yes");
+            console.log(yes)
+            yes.onclick = function(){
+                var newDiv = document.createElement("div");
+                newDiv.style.backgroundColor = "blue";
+                newDiv.style.width = "300px";
+                newDiv.style.height = "300px";
+                body.appendChild(newDiv);
+                body.removeChild(zhezhao);
+            }
+            var no = document.querySelector(".btn.no");
+            console.log(no)
+            no.onclick = function(){
+                body.removeChild(zhezhao);
+            }
+
+
+        } */
     </script>
 </body>
 </html>
