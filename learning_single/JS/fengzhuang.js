@@ -41,12 +41,16 @@ export function lcAlert(args){
     var confirmFn = document.querySelector(".btn.yes");
     confirmFn.onclick = function(){
         args.confirmFn()
-        body.removeChild(zhezhao);
+        //body.removeChild(zhezhao);
+        zhezhao.style.position = "fixed";
+        zhezhao.className="animate__animated animate__fadeOut";
     }
     var cancelFn = document.querySelector(".btn.no");
     cancelFn.onclick = function(){
         //判断是否为函数，是就执行函数，不是就不执行
         typeof args.cancelFn() == "function"?args.cancelFn():null;
-        body.removeChild(zhezhao);
+        zhezhao.style.position = "fixed";
+        zhezhao.className="animate__animated animate__fadeOut";
+        //body.removeChild(zhezhao).className ="animate__animated animate__fadeOut";
     }
 }

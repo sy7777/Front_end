@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>其余常用事件</title>
+    <style>
+        #d1{
+            width: 75%;
+            height: 75%;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="username" id="username" value="" />
+    <div id="d1"></div>
+    <script>
+        var inputDom = document.querySelector("#username");
+        var isDraw = false;
+        //获取焦点事件
+        inputDom.onfocus = function(e){
+            //console.log(e);
+        }
+
+        inputDom.onblur = function(e){
+            //console.log(e);
+        }
+
+        //改变事件onChange
+        //有鼠标移入
+        var d1 = document.querySelector("#d1");
+        d1.onmouseenter = function(e){
+            console.log(e);
+            d1.style.backgroundColor = "purple";
+        }
+
+        //鼠标移出事件
+        d1.onmouseleave = function(e){
+            d1.style.backgroundColor = "yellow";
+        }
+
+        //鼠标在元素上移动事件
+        d1.onmousemove = function(e){
+            //console.log(e);
+            if(isDraw === true){
+                var circleDiv = document.createElement("div");
+                circleDiv.style.width = "20px";
+                circleDiv.style.height = "20px";
+                circleDiv.style.borderRadius = "10px";
+                circleDiv.style.height = "10px";
+                circleDiv.style.backgroundColor = "orange";
+                //获取当前位置
+                var x = e.pageX;
+                var y = e.pageY;
+                circleDiv.style.position = "absolute";
+                circleDiv.style.left = `${x-5}px`;
+                circleDiv.style.top = `${y-5}px`;
+
+
+                d1.appendChild(circleDiv);
+            }
+        }
+        //点击事件
+        d1.onclick = function(e){
+            isDraw = true;
+        }
+
+        //双击事件
+        d1.ondblclick = function(e){
+            isDraw = false;
+        }
+
+    </script>
+</body>
+</html>
