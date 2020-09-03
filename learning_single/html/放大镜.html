@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnifier</title>
+
+    <style>
+        .fdj{
+            width: 800px;
+            height: 300px;
+            margin: 0 auto;
+            display: flex;
+        }
+        .left{
+            width: 400px;
+            height: 300px;
+            background-image: url("../img/selfie.jpg");
+            background-size: 100% 100%;
+            position: relative;
+        }
+        .zhezhao{
+            display: none;
+            width: 200px;
+            height: 150px;
+            background: rgb(238, 203, 89, 0.6);
+            position: absolute;
+        }
+        .right{
+            width: 400px;
+            height: 300px;
+            display: none;
+            background-image: url("../img/selfie.jpg");
+            background-size: 800px 600px;
+            background-position: 0 0;
+        }
+
+    </style>
+</head>
+<body>
+       <!-- div.fdj>((.left>.zhezhao)+.right) -->
+       <div class="fdj">
+           <div class="left">
+               <div class="zhezhao"></div>
+           </div>
+           <div class="right"></div>
+       </div>
+
+       <script>
+           var left = document.querySelector(".left");
+           var zhezhao = document.querySelector(".zhezhao");
+           var fdj = document.querySelector(".fdj");
+           var right = document.querySelector(".right");
+
+           //移入显示
+           left.onmouseover = function(){
+               zhezhao.style.display = "block";
+               right.style.display = "block";
+           }
+
+           //移入隐藏
+           left.onmouseleave = function(){
+               zhezhao.style.display = "none";
+           }
+
+           //监听鼠标left的移动,要传入值,offsetLeft是父元素的值，表示与浏览器的边框的距离
+           
+           left.onmousemove = function(event){
+               //console.log(event);
+                var x = event.pageX - 100 - fdj.offsetLeft;
+                var y = event.pageY - 75 - fdj.offsetTop;
+                if(x<0){x=0};
+                if(x>200){x=200};
+                if(y<0){y=0};
+                if(y>150){y=150};
+
+
+                zhezhao.style.left = `${x}px`;
+                zhezhao.style.top = `${y}px`;
+
+               // right.style.backgroundPosition = `${x*2}px${ y*2}px"`;
+                right.style.backgroundPosition = -(x*2) + "px " + (-y*2) + "px";
+
+           }
+       </script>
+</body>
+</html>
