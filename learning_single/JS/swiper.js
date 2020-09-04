@@ -28,17 +28,17 @@ function renderNum(){
     circleDiv.forEach(function(item, i){
         item.classList.remove("active")
     })   
+    //增加新的active类
         imgListDiv[currentImg].classList.add("active");
         circleDiv[currentImg].classList.add("active");
 }
 
 circleDiv.forEach(function(item, i){
     item.onclick = function(){
-        var index = i;
-        currentImg = index;
+        //var index = i;
+        currentImg = i;
         renderNum();
-    }
-    
+    }  
 })
 
 
