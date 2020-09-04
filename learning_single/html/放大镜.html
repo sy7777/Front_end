@@ -57,9 +57,10 @@
                right.style.display = "block";
            }
 
-           //移入隐藏
+           //移出隐藏
            left.onmouseleave = function(){
                zhezhao.style.display = "none";
+               right.style.display = "none";
            }
 
            //监听鼠标left的移动,要传入值,offsetLeft是父元素的值，表示与浏览器的边框的距离

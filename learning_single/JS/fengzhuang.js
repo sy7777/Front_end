@@ -19,9 +19,10 @@ args:{
 export function lcAlert(args){
     var zhezhao = document.createElement("div");
     var body = document.querySelector("body");
+
     zhezhao.className = "zhezhao";
         zhezhao.innerHTML = `
-        <div class="alert animate__animated animate__slideInDown ">
+        <div class="alert animate__animated animate__fadeInDown ">
         <div class="header"><span class="title">${args.title}</span><span class="close">x</span></div>
         <div class="main">${args.content}</div>
         <div class="btnList">
@@ -31,6 +32,10 @@ export function lcAlert(args){
     </div>
         `;
     body.appendChild(zhezhao);
+
+
+    var alertKuang = document.querySelector(".alert");
+    console.log(alertKuang);
 
     //获取关闭事件
     var closeDiv = document.querySelector(".close");
@@ -42,15 +47,29 @@ export function lcAlert(args){
     confirmFn.onclick = function(){
         args.confirmFn()
         //body.removeChild(zhezhao);
-        zhezhao.style.position = "fixed";
-        zhezhao.className="animate__animated animate__fadeOut";
+    
+        alertKuang.className="alert animate__animated animate__fadeOutUp";
+        document.onanimationend = function(){
+            zhezhao.removeChild(alertKuang);
+            body.removeChild(zhezhao);
+            document.onanimationend = undefined;
+        }
+        
+        //body.removeChild(zhezhao);
     }
     var cancelFn = document.querySelector(".btn.no");
+
     cancelFn.onclick = function(){
         //判断是否为函数，是就执行函数，不是就不执行
         typeof args.cancelFn() == "function"?args.cancelFn():null;
-        zhezhao.style.position = "fixed";
-        zhezhao.className="animate__animated animate__fadeOut";
+       
+        alertKuang.className="alert animate__animated animate__fadeOutUp";
         //body.removeChild(zhezhao).className ="animate__animated animate__fadeOut";
+        document.onanimationend = function(){
+            zhezhao.removeChild(alertKuang);
+            body.removeChild(zhezhao);
+            document.onanimationend = undefined;
+        }
+        
     }
 }
