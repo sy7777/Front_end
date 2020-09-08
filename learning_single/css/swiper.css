@@ -43,6 +43,10 @@
     /* left: calc(50% - 30px); */
     top: calc(50% - 250px);
     font-size: 35px;
+    opacity: 0;
+}
+.swiper .arrow.pre:hover{
+    opacity: 1;
 }
 .swiper .arrow.next{
     width: 60px;
@@ -56,6 +60,10 @@
     right: 0;
     top: calc(50% - 250px);
     font-size: 35px;
+    opacity: 0;
+}
+.swiper .arrow.next:hover{
+    opacity: 1;
 }
 .circleList{
     width: 100%;

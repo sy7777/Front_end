@@ -3,6 +3,7 @@ var nextArrow = document.querySelector(".next");
 var imgListDiv = document.querySelectorAll(".swiper .imgItem");
 var currentImg = 0;
 var circleDiv = document.querySelectorAll(".circleItem");
+var circleListDiv = document.querySelectorAll(".circleList");
 
 nextArrow.onclick = function(){
     currentImg = currentImg + 1;
@@ -39,7 +40,15 @@ circleDiv.forEach(function(item, i){
         currentImg = i;
         renderNum();
     }  
-})
+}) 
 
+//通过事件代理
+/* circleListDiv.onclick = function(event){
+    if(event.target.classList.contains("circleItem")){
+        var index = parseInt(event.target.id[1]);
+        currentImg = index;
+        renderNum();
+    }
+} */
 
 
