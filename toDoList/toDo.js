@@ -10,20 +10,18 @@ if(!localStorage.itemList ){
 //获取input对象
 var inputDom = document.querySelector("#input");
 var toDoListDiv = document.querySelector(".doing .list")
-console.log(toDoListDiv)
+//console.log(toDoListDiv)
 var doneListDiv = document.querySelector(".done .list")
 
 var mainDiv = document.querySelector(".main");
 var doingNumDiv = document.querySelector(".doing .num")
 var doneNumDiv = document.querySelector(".done .num")
 render(itemList)
-console.log(doingNumDiv)
 updateNum();
 
 
 //监听输入事件
-inputDom.onkeydown = function(event){
-    
+inputDom.onkeydown = function(event){  
     //console.log(inputDom.value)
     //当按下回车键，获取输入内容，并生成列表
     if(event.key == "Enter"){
@@ -70,10 +68,8 @@ function render(itemList){
             <div class="del" data-index=${i}>DEL</div>`
 
             doneListDiv.appendChild(newItem);
-            // doneNumDiv.innerHTML = doneNum
         }
     })
-
 }
 
 

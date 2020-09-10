@@ -7,6 +7,9 @@
 body{
     font-size: 16px;
 }
+h3{
+    font-size: 0.18rem;
+}
 .main{
     width: 3.75rem;
     /* height: 100%;
@@ -66,6 +69,7 @@ body{
     display: flex;
     height: 0.32rem;
     line-height: 0.32rem;
+    font-size: 0.14rem;
     align-items: center;
     background: lightcyan;
     border-radius: 0.05rem;
