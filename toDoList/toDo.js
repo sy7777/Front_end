@@ -10,8 +10,15 @@ if(!localStorage.itemList ){
 //获取input对象
 var inputDom = document.querySelector("#input");
 var toDoListDiv = document.querySelector(".doing .list")
+console.log(toDoListDiv)
 var doneListDiv = document.querySelector(".done .list")
+
 var mainDiv = document.querySelector(".main");
+var doingNumDiv = document.querySelector(".doing .num")
+var doneNumDiv = document.querySelector(".done .num")
+render(itemList)
+console.log(doingNumDiv)
+updateNum();
 
 
 //监听输入事件
@@ -28,7 +35,8 @@ inputDom.onkeydown = function(event){
         }
         itemList.push(objItem);
         console.log(itemList) 
-        render(itemList);      
+        render(itemList);
+        updateNum();    
     }    
 }
 
@@ -50,8 +58,11 @@ function render(itemList){
             newItem.innerHTML = `<input type="checkbox" data-index=${i}>
             <div class="content">${value}</div>
             <div class="del" data-index=${i}>DEL</div>`
-
+            // var currentDoingNum = toDoListDiv.
+            //console.log(i)
             toDoListDiv.appendChild(newItem);
+            //console.log(doingNumDiv)
+            
         }else{
             value = item.content;
             newItem.innerHTML = `<input type="checkbox" checked="checked" data-index=${i}>
@@ -59,22 +70,26 @@ function render(itemList){
             <div class="del" data-index=${i}>DEL</div>`
 
             doneListDiv.appendChild(newItem);
+            // doneNumDiv.innerHTML = doneNum
         }
     })
+
 }
-render(itemList)
+
 
 toDoListDiv.onchange = function(event){
     //console.log(event);
     var index = event.target.dataset.index;
     itemList[index].isDone = true;
     render(itemList);
+    updateNum()
 }
 doneListDiv.onchange = function(event){
     //console.log(event);
     var index = event.target.dataset.index;
     itemList[index].isDone = false;
     render(itemList);
+    updateNum()
 }
 mainDiv.onclick = function(e){
     console.log(e);
@@ -82,5 +97,13 @@ mainDiv.onclick = function(e){
         var index = event.target.dataset.index;
         itemList.splice(index,1);
         render(itemList);
+        updateNum()
     }
+}
+function updateNum(){
+    var doneNum = doneListDiv.querySelectorAll(".toDoItem").length
+    var doingNum = toDoListDiv.querySelectorAll(".toDoItem").length
+
+    doingNumDiv.innerText = doingNum;
+    doneNumDiv.innerText = doneNum;
 }
