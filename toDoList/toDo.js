@@ -1,5 +1,12 @@
 //设置全局变量，保存到这里面
-var itemList = [];
+if(!localStorage.itemList ){
+    var itemList = [];
+} else{
+    //parse是把字符串变为对象
+    var itemList = JSON.parse(localStorage.itemList);
+} 
+
+// var itemList = [];
 //获取input对象
 var inputDom = document.querySelector("#input");
 var toDoListDiv = document.querySelector(".doing .list")
@@ -9,6 +16,8 @@ var mainDiv = document.querySelector(".main");
 
 //监听输入事件
 inputDom.onkeydown = function(event){
+    
+    //console.log(inputDom.value)
     //当按下回车键，获取输入内容，并生成列表
     if(event.key == "Enter"){
         var value = inputDom.value;
@@ -18,15 +27,19 @@ inputDom.onkeydown = function(event){
             isDone: false
         }
         itemList.push(objItem);
-        console.log(itemList)               
-    }
-    render(itemList);
+        console.log(itemList) 
+        render(itemList);      
+    }    
 }
 
 function render(itemList){
+    //将对象转化为Json格式的字符串
+    localStorage.itemList = JSON.stringify(itemList);
+    // localStorage.itemList = itemList;
     //每一次渲染就清空内容
     toDoListDiv.innerHTML = '';
     doneListDiv.innerHTML = "";
+    inputDom.value = "";
 
     itemList.forEach(function(item, i){
        
@@ -49,6 +62,8 @@ function render(itemList){
         }
     })
 }
+render(itemList)
+
 toDoListDiv.onchange = function(event){
     //console.log(event);
     var index = event.target.dataset.index;
