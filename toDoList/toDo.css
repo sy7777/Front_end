@@ -53,9 +53,12 @@ body{
 }
 .doing{
     background: #FFCC99;
+    /* box-sizing: content-box; */
+    margin: 0;
 }
 .list{
     padding: 0 0.15rem;
+    
 }
 .todoItem{
     display: flex;
@@ -66,6 +69,7 @@ body{
     border-radius: 0.05rem;
     overflow: hidden;
     /* justify-content: center; */
+    margin-bottom: 0.1rem;
 }
 .todoItem::before{
     width: 0.04rem;
