@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toDo.css">
+    <script src="./toDo.js"></script>
+    <script src="../learning_single/JS/responsive.js"></script>
+    <title>To Do List</title>
+</head>
+    <body>
+    <!-- 
+        1. HTML结构
+        2. css样式
+        3. JS 功能：输入框输入功能，未完成列表显示功能，完成列表显示
+     -->
+     <!-- .main>(.header>(.logo{toDo}+input))>(.doing>(h3>(.title{Doing})+span.num)+.list)>(.done>(h3>(.title{Doing})+span.num)+.list) -->
+     <div class="main">
+            <div class="header">
+                <div class="logo">To Do List</div>
+                <input type="text" id="input" placeholder="Enter something....">
+            </div>
+            <div class="doing todo">
+                <h3><span class="title">Doing</span><span class="num">0</span></h3>
+                <div class="list">
+                    <div class="todoItem">
+                        <input type="checkbox">
+                        <div class="content">今晚吃饭</div>
+                        <div class="del">DEL</div>
+                    </div>
+                </div>
+            </div>
+            <div class="done todo">
+                <h3><span class="title">Done</span><span class="num">0</span></h3>
+                <div class="list">
+                    <div class="todoItem">
+                        <input type="checkbox">
+                        <div class="content">今晚吃饭</div>
+                        <div class="del">DEL</div>
+                    </div>
+                </div>
+            </div>
+     </div>
+
+    </body>
+</html>
