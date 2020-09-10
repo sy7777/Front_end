@@ -122,3 +122,10 @@ body{
     align-items: center;
     justify-content: space-between;
 } */
+.pc{
+    font-size: 200px !important;
+    
+}
+.pc .main{
+    margin: 0 auto;
+}
