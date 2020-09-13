@@ -7,18 +7,42 @@
 <body>
     <audio src="../../music/年少有为李荣浩.mp3" controls="controls"></audio>
     <button class="button" type="button">Play </button>
+    <button class="muted" type="button">Mute </button>
+    <button class="chorus" type="button">Chorus </button>
+    <input class = "volume" type="range" min="0" max="1" step="0.01" name="" id="">
     <script>
         var audio = document.querySelector("audio")
         console.log([audio])
         var btn = document.querySelector(".button");
+        var btnMute = document.querySelector(".muted");
+        var vol = document.querySelector(".volume");
+        var btnChorus = document.querySelector(".chorus");
         btn.onclick = function(){
             if(audio.paused === true){
                 audio.play();
+                btn.innerText = "Pause";
             }else{
                 audio.pause();
+                btn.innerText = "Play";
             }
             
         }
+        btnMute.onclick = function(){
+            if (audio.muted === true){
+                audio.muted = false;
+            }else{
+                audio.muted = true;
+            }
+        }
+        vol.onchange = function(event){
+            console.log(vol.value);
+            audio.volume = vol.value;
+
+        }
+        btnChorus.onclick = function(){
+            audio.currentTime = 87;
+        }
+
     </script>
 </body>
 
