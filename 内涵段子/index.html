@@ -1,0 +1,59 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./duanzi.css" />
+    <title>内涵段子</title>
+  </head>
+  <body>
+    <div class="videoList">
+        <div class="loading">Loading……</div>
+    </div>
+    <div class="playPage">
+      <video src=""></video>
+      <div class="close"></div>
+    </div>
+    <!--     <div class="videoList">
+        <div class="videoItem">
+            <div class="videoTop">
+                
+                <div class="img" style="background-image: url(http://wimg.spriteapp.cn/profile/20180809175305264102.png);"></div>
+                <button type="button"></button>
+                <h3 class="title">有时候你输得不是能力……</h3>
+                <p>
+                    <span class="icon"></span>
+                    <span><span class="num">10</span>次播放</span>
+                </p>
+            </div>
+
+            <div class="videoBottom">
+                <img src="http://wimg.spriteapp.cn/profile/large/2018/01/15/5a5c5b3a9cb70_mini.jpg" srcset="">
+                <div class="right">
+                    <div class="author">搞笑二货</div>
+                    <div class="comment">记得最后把脑子里进的水倒一下</div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <script src="../learning_single/JS/getAjax.js"></script>
+
+    <script>
+      var videoList = [];
+      var pageNum = 1;
+      var http = `https://api.apiopen.top/getJoke?page=${pageNum}&count=5&type-video`;
+      getAjax1(http, function (xhr) {
+        var obj = JSON.parse(xhr.response);
+        console.log(obj);
+        videoList = obj.result;
+        renderVideoList(videoList);
+      });
+
+      //加载数据
+      //通过获取到的数据渲染出视频列表
+      //每个视频列表的播放按钮进行绑定播放事件
+      //播放和暂停内容
+    </script>
+    <script src="./renderVideo.js"></script>
+
+  </body>
+</html>
