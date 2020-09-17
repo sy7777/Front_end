@@ -1,4 +1,4 @@
-var body = document.querySelector("body");
+/* var body = document.querySelector("body");
 body.ontouchstart = function(event){
     // console.log(event,"触碰时间开始")
 }
@@ -7,7 +7,7 @@ body.ontouchmove = function(event){
 }
 body.ontouchend = function(event){
     // console.log(event,"触碰结束了")
-}
+} */
 //1. 定义自定事件
 //2. 设定四个方向
 //
@@ -25,6 +25,42 @@ var swipe = {
         dom.emit = this.emit;
         dom.removeEvent = this.removeEvent;
         dom.touchesData= {};
+
+        dom.addEventListener("touchstart",function(e){
+            // console.log(e,"start");
+            this.touchesData.startX = e.touches[0].pageX;
+            this.touchesData.startY = e.touches[0].pageY;
+        })
+        dom.addEventListener("touchmove",function(e){
+            // console.log(e);
+            this.touchesData.endX = e.touches[0].pageX;
+            this.touchesData.endY = e.touches[0].pageY;
+        })
+        // 结束事件没有pageXY的位置，只能通过移动来获取
+        dom.addEventListener("touchend",function(e){
+            // console.log(e,"end");
+            
+            var x = this.touchesData.endX - this.touchesData.startX;
+            var y = this.touchesData.endY - this.touchesData.startY;
+        
+            if((Math.abs(x)> Math.abs(y)) && Math.abs(x)>100){
+                if(x>0){
+                    // console.log("向右滑");
+                    body.emit("swipeRight","这是向右滑动事件");
+                }else{
+                    // console.log("向左滑");
+                    body.emit("swipeLeft","这是向左滑动事件");
+                }
+            }else if((Math.abs(x)< Math.abs(y)) && Math.abs(y)>100){
+                if(y>0){
+                    // console.log("向下滑");
+                    body.emit("swipeDown","这是向下滑动事件");
+                }else{
+                    // console.log("向上滑");
+                    body.emit("swipeTop","这是向上滑动事件");
+                }
+            }
+        })
     },
     addEvent:function(eventName, callbackFn){
         // this.init(dom);
@@ -38,10 +74,14 @@ var swipe = {
         console.log(this.eventAll); 
     },
     emit: function(eventName, eventMsg){
-        this.eventAll[eventName].forEach(function(item, i){
-            //console.log(item)
-            item(eventMsg)
-        })
+        console.log(this.eventAll[eventName])
+        if(this.eventAll[eventName] != undefined){
+            this.eventAll[eventName].forEach(function(item, i){
+                //console.log(item)
+                item(eventMsg)
+            }
+        
+        )}
     },
     removeEvent:function(eventName, callbackFn){
         var that = this;
@@ -53,56 +93,3 @@ var swipe = {
         })
     }
 }
-swipe.init(body);
-body.addEvent("swipeLeft", function(eventMsg){
-    console.log("swipeLeft");
-    console.log(eventMsg);
-})
-body.emit("swipeLeft","这是向左滑动事件");
-body.addEventListener("touchstart",function(e){
-    console.log(e,"start");
-    this.touchesData.startX = e.touches[0].pageX;
-    this.touchesData.startY = e.touches[0].pageY;
-})
-body.addEventListener("touchmove",function(e){
-    // console.log(e);
-    this.touchesData.endX = e.touches[0].pageX;
-    this.touchesData.endY = e.touches[0].pageY;
-})
-// 结束事件没有pageXY的位置，只能通过移动来获取
-body.addEventListener("touchend",function(e){
-    console.log(e,"end");
-    
-    var x = this.touchesData.endX - this.touchesData.startX;
-    var y = this.touchesData.endY - this.touchesData.startY;
-
-    if((Math.abs(x)> Math.abs(y)) && Math.abs(x)>100){
-        if(x>0){
-            console.log("向右滑");
-        }else{
-            console.log("向左滑");
-        }
-    }else if((Math.abs(x)< Math.abs(y)) && Math.abs(y)>100){
-        if(y>0){
-            console.log("向下滑");
-        }else{
-            console.log("向上滑");
-        }
-    }
-})
-
-/* body.addEventListener("touchstart",function(e){
-    console.log(e);
-}) */
-/* swipe.addEvent(body,"swipeLeft", function(eventMsg){
-    console.log("swipeLeft");
-    console.log(eventMsg);
-})
-var fn = function(eventMsg){
-    console.log("swipeRight");
-    console.log(eventMsg);
-}
-
-swipe.addEvent("swipeLeft",fn)
-swipe.removeEvent("swipeLeft",fn)
-swipe.emit("swipeLeft","这是向左滑动事件") */

@@ -6,36 +6,32 @@
   </head>
   <body>
     <script src="../JS/swiping.js"></script>
-    <!-- <script>
-      var swipeDir = {
-        eventAll: {
-          //“自定义的事件名称”：['事件要出发执行的函数1', "事件要出发执行的函数2"……]
-        },
+    <script>
+      var body = document.querySelector("body");
+      swipe.init(document.body);
 
-        init: function (dom) {
-          (dom.eventAll = {}), (dom.addEvent = this.addEvent);
-        }, 
-        addEvent:function(eventName, callbackFn){
-          if (this.eventAll[eventName] == undefined) {
-            this.eventAll = [];           
-            //console.log(this.eventName);
-            console.log(eventName);
-          }
-          console.log(this.eventAll[eventName]);
-          this.eventAll[eventName].push(callbackFn);
-          console.log(this.eventAll);
-        },
-        emit:function(eventName, eventMsg){
-          swipeDir.eventAll[eventName].forEach(function(item, i){
-            item(eventMsg);
-           });
-        }
-      };
-      swipeDir.addEvent("swipeLeft", function(eventMsg){
-        console.log("swipeLeft");
-         console.log(eventMsg);
-      });
-       swipeDir.emit("swipeLeft", "这是向左滑动事件");
-    </script> -->
+      body.addEvent("swipeLeft", function(eventMsg){
+    // console.log("swipeLeft");
+    // console.log(eventMsg);
+    body.style.background = "purple";
+})
+body.addEvent("swipeRight", function(eventMsg){
+    // console.log("swipeLeft");
+    // console.log(eventMsg);
+    body.style.background = "blue";
+})
+var num = 0;
+body.addEvent("swipeDown", function(eventMsg){
+    // console.log("swipeLeft");
+     console.log(eventMsg);
+     num ++;
+    var h1 = document.createElement("h1");
+    h1.innerText = `这是第${num}`
+    
+    body.appendChild(h1)
+    console.log(num)
+})
+
+    </script>
   </body>
 </html>
