@@ -17,14 +17,39 @@ var score = 0;
 var scoreDiv = document.querySelector("#score");
 var scoreFinalDiv = document.querySelector("#scoreFinal");
 var startBtnDiv = document.querySelector(".startBtn");
+var pauseBtnDiv = document.querySelector(".pauseBtn");
 var restartBtnDiv = document.querySelector(".restartBtn");
 var endPage = document.querySelector(".endGame");
 var interID;
+var tempID = false;
 
 startBtnDiv.onclick = function(){
-    // endGamePage.style.display = "none";
-    game();
+    // tempID = interID;
+    interID = "";
+/*     if(interID != ""){
+       console.log(interID)
+        return
+    } */
+/*     if (interID == interID+1){
+      return;
+    } */
+    if(interID && tempID == true){
+      return;
+    }else{
+      console.log(interID+"hhh")
+      game();
+    }
+   
+    
+    
 }
+ pauseBtnDiv.onclick = function(){
+  // tempID = interID;
+    if(interID != ""){
+        clearInterval(interID);
+       
+    }
+} 
 function renderGrid() {
   for (var i = 0; i < 20; i++) {
     for (var j = 0; j < 15; j++) {
@@ -99,6 +124,7 @@ function game(){
         }
         renderSnake();   
       }, 200);
+      console.log(interID+"11111")
 }
 
 
@@ -107,7 +133,7 @@ function isFood(head) {
   var newHead = document.querySelector(`#x${head.x}y${head.y}`);
   if (newHead.className == "grid food") {
     score++;
-    console.log(score);
+    //console.log(score);
     scoreDiv.innerHTML = score;
     return true;
   }else{
@@ -126,7 +152,7 @@ function isSnake(head){
 }
 
 body.addEventListener("keydown", function (e) {
-  console.log(e);
+  //console.log(e);
   // if(e.key == "ArrowUp" && direction.y!=1){
   if (e.key == "ArrowUp" && direction.y != 1) {
     direction = { x: 0, y: -1 };
