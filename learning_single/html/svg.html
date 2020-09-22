@@ -23,9 +23,12 @@
         <path d="M 90,75 L 100,50 L 110,75"></path>
         <text x="50" y="80">Order</text>
       </g>
-      <g id="kedu"></g>
+      <g id="xkedu"></g>
+      <g id="ykedu"></g>
 
-      <g id="barList"></g>
+      <g id="barList">
+        <!-- <rect x="" y="" width="" height=""></rect> -->
+      </g>
     </svg>
     <script>
       var data = [
@@ -35,11 +38,11 @@
         },
         {
           data: "Tuesday",
-          order: "2000",
+          order: "1400",
         },
         {
           data: "Wendesday",
-          order: "3000",
+          order: "1500",
         },
         {
           data: "Thursday",
@@ -54,21 +57,23 @@
           order: "1000",
         },
         {
-          data: "Saturday",
-          order: "1000",
-        },
-        {
           data: "Sunday",
-          order: "1300",
+          order: "900",
         },
       ];
       console.log(data);
       var eachLength = 700 / data.length;
-
-      var xkedu = document.querySelector("#kedu");
+      var yeachLength = 450 / 15;
+        var barListDom = document.querySelector("#barList");
+      var xkedu = document.querySelector("#xkedu");
+      var ykedu = document.querySelector("#ykedu");
       for (var i = 0; i < data.length-1; i++) {
         renderKedu(i);
         console.log(i);
+      }
+      for(var j = 1; j<=16; j++){
+        ykedu.innerHTML = ykedu.innerHTML +`<line class="axis" x1="100" y1="${600-yeachLength * j}" x2="120" y2="${600-yeachLength * j}"></line>`
+        +`<text x="50" y="${600-yeachLength * j}">${100*j}</text>`;      
       }
       function renderKedu(index) {
         var lineDom = document.createElement("line");
@@ -79,7 +84,14 @@
         lineDom.setAttribute("y2", "580");
         //keduDom.appendChild(lineDom)    //invalid
          xkedu.innerHTML = xkedu.innerHTML + lineDom.outerHTML+`<text x=${120+eachLength * index} y="620">${data[index].data}</text>`;
-      }
+         ykedu.innerHTML = ykedu.innerHTML +`<line class="axis" x1="100" y1="${600-yeachLength * index}" x2="120" y2="${600-yeachLength * index}"></line>`;
+        var color = `rgb(${parseInt(Math.random()*255)},${parseInt(Math.random()*255)},${parseInt(Math.random()*255)})`;
+         barListDom.innerHTML = barListDom.innerHTML+
+         `<rect x="${125+eachLength * index}" y="${600-(yeachLength*(data[index].order/100))}" 
+         width="50" height="${yeachLength*(data[index].order/100)}" fill="${color}"></rect>
+`
+        }
+
     </script>
   </body>
 </html>
