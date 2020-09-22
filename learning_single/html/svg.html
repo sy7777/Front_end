@@ -1,81 +1,85 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        .axis{
-            stroke: #999;
-
-        }
+      .axis {
+        stroke: #999;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <svg width="1000" height="700">
-        <!-- <circle id = "#cir1" cx="200" cy ="200" r="50" fill="orange">
+      <!-- <circle id = "#cir1" cx="200" cy ="200" r="50" fill="orange">
         </circle> -->
-        <g id="zuobiao">
-            <!-- x -->
-            <line class="axis" x1="50" y1="600" x2="950" y2="600"></line>
-            <path d="M 925,590 L 950,600 L 925,610"></path>
-            <text x="920" y="630">Date</text>
-            <!-- y -->
-            <line class="axis" x1="100" y1="650" x2="100" y2="50"></line>
-            <path d="M 90,75 L 100,50 L 110,75"></path>
-            <text x="50" y="80">Order</text>
-        </g>
-        <g id ="kedu">
+      <g id="zuobiao">
+        <!-- x -->
+        <line class="axis" x1="50" y1="600" x2="950" y2="600"></line>
+        <path d="M 925,590 L 950,600 L 925,610"></path>
+        <text x="920" y="630">Date</text>
+        <!-- y -->
+        <line class="axis" x1="100" y1="650" x2="100" y2="50"></line>
+        <path d="M 90,75 L 100,50 L 110,75"></path>
+        <text x="50" y="80">Order</text>
+      </g>
+      <g id="kedu"></g>
 
-        </g>
-        <g id="barList">
-
-        </g>
+      <g id="barList"></g>
     </svg>
     <script>
-        var data = [{
-            data: "Monday",
-            order: "1000"
+      var data = [
+        {
+          data: "Monday",
+          order: "1000",
         },
         {
-            data: "Tuesday",
-            order: "2000"
+          data: "Tuesday",
+          order: "2000",
         },
         {
-            data: "Wendesday",
-            order: "3000"
+          data: "Wendesday",
+          order: "3000",
         },
         {
-            data: "Thursday",
-            order: "800"
+          data: "Thursday",
+          order: "800",
         },
         {
-            data: "Friday",
-            order: "700"
+          data: "Friday",
+          order: "700",
         },
         {
-            data: "Saturday",
-            order: "1000"
+          data: "Saturday",
+          order: "1000",
         },
         {
-            data: "Saturday",
-            order: "1000"
-        }
-    ]
-    var eachLength = 450/data.length;
- 
-    var keduDom = document.querySelector("#kedu");
-    for(var i=0; i<data.length;i++){
-renderKedu()
-console.log(i)
-    }
-    function renderKedu(i){
+          data: "Saturday",
+          order: "1000",
+        },
+        {
+          data: "Sunday",
+          order: "1300",
+        },
+      ];
+      console.log(data);
+      var eachLength = 700 / data.length;
+
+      var xkedu = document.querySelector("#kedu");
+      for (var i = 0; i < data.length-1; i++) {
+        renderKedu(i);
+        console.log(i);
+      }
+      function renderKedu(index) {
         var lineDom = document.createElement("line");
         lineDom.className = "axis";
-        lineDom.setAttribute("x1",eachLength*i)
-        lineDom.setAttribute("y1","600")
-        lineDom.setAttribute("x2",eachLength*i)
-        lineDom.setAttribute("y1","580")
-    }
+        lineDom.setAttribute("x1",190+eachLength * index);
+        lineDom.setAttribute("y1", "600");
+        lineDom.setAttribute("x2", 190+eachLength * index);
+        lineDom.setAttribute("y2", "580");
+        //keduDom.appendChild(lineDom)    //invalid
+         xkedu.innerHTML = xkedu.innerHTML + lineDom.outerHTML+`<text x=${120+eachLength * index} y="620">${data[index].data}</text>`;
+      }
     </script>
-</body>
+  </body>
 </html>
