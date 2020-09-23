@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" width="600" height="600"></canvas>
+    <script>
+
+        // 1. Find canvas
+        var canvas1 = document.querySelector("#canvas1");
+        // 2. object for the painting brush
+        var ctx = canvas1.getContext("2d");
+        console.log(ctx);
+        // 3. draw the start
+        ctx.beiginPath();
+        ctx.moveTo(50,50);
+        // 4. move along the path
+        ctx.lineTo(50,300);
+        ctx.lineTo(300,100);
+        ctx.lineTo(300,250);
+        ctx.closePath(); //让路径闭合不连笔
+
+
+        ctx.lineCap = "round";  //设置起始和终止为圆角
+        // ctx.lineJoin = "round"  //转折处为圆角
+        ctx.miterLimit = 2;
+        // ctx.fill() //triangle
+        // 5. outline the structure
+        ctx.lineWidth = 20;
+        ctx.strokeStyle = "brown";
+
+        ctx.stroke();
+
+    </script>
+</body>
+</html>
