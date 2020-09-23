@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1" width="600" height="600"></canvas>
+    <script>
+
+        var canvas1 = document.querySelector("#canvas1");
+        var ctx = canvas1.getContext("2d");
+        console.log(ctx);
+        ctx.font = "50px Times"
+
+        // 设置阴影
+        ctx.shadowBlur = 20;
+        ctx.shadowColor = "rgba(0,0,0,1)";
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+        // 弹幕功能
+        var x = 600;
+        setInterval(function(){
+            //  
+            ctx.clearRect(0,0,600,600);
+            x -= 3;
+            if(x < -100){
+                x = 600;
+            }
+            
+            ctx.fillText("hello world",x,100)
+            ctx.strokeText("hello world",x,200) //镂空
+        },16)
+
+
+    </script>
+</body>
+</html>
