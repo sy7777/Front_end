@@ -1,6 +1,8 @@
 var canvas = document.querySelector("#canvas");
 var brush = document.querySelector("#brush");
 var rect = document.querySelector("#rect");
+var circle = document.querySelector("#circle");
+var ease = document.querySelector("#ease");
 var allBtn = document.querySelectorAll(".btn");
 var colorPicker = document.querySelector(".color-picker");
 console.log([canvas])
@@ -15,6 +17,8 @@ var huaban = {
     beginX: 0,
     beginY: 0,
     currentColor:"black",
+    rx:0,
+    ry:0,
 
     imageData: null,
     brushFn: function (e) {
@@ -42,13 +46,37 @@ var huaban = {
         painting.closePath();
     },
 
-/*     colorPickerFn: function(e){
-        console.log("1111111111")
-        colorPicker.onchange = function(e){
-            huaban.currentColor = e.target.value;
-            console.log(e);
+    circleFn: function(e){
+        console.log(e)
+        var x = e.pageX - canvas.offsetLeft;
+        var y = e.pageY - canvas.offsetTop;
+        var rx = x - huaban.beginX;
+        var ry = x - huaban.beginY;
+        // var ry = e.offsetY - canvas.offsetTop;
+        var r = Math.sqrt(rx*rx+ry*ry);
+        painting.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+        if(huaban.imageData !=null){
+            painting.putImageData(huaban.imageData,0,0,0,0,canvas.offsetWidth,canvas.offsetHeight)
         }
-    } */
+        // 
+        painting.beginPath();
+        painting.arc(huaban.beginX, huaban.beginY, r, 0, 2*Math.PI);
+        painting.strokeStyle=this.currentColor;
+        painting.stroke();
+        painting.closePath();
+    } ,
+
+    easeFn: function(e){
+        var x = e.pageX - canvas.offsetLeft;
+        var y = e.pageY - canvas.offsetTop;
+        painting.beginPath();
+        painting.globalCompositeOperation = "destination-out";
+        painting.arc(x, y, 6, 0, 2 * Math.PI);
+        // painting.fillStyle=this.currentColor;
+        painting.fill();
+        painting.closePath();
+    }
+
 
 }
 
@@ -73,6 +101,30 @@ rect.onclick = function () {
     huaban.type = "rect";
 
 }
+
+circle.onclick = function (e) {
+    // brush.className = "btn active";
+    allBtn.forEach(function (item, i) {
+        // console.log(item)
+        // console.log(i)
+        item.classList.remove("active");
+
+    })
+    circle.classList.add("active");
+    huaban.type = "circle";
+}
+
+ease.onclick = function(e){
+    allBtn.forEach(function (item, i) {
+        // console.log(item)
+        // console.log(i)
+        item.classList.remove("active");
+
+    })
+    ease.classList.add("active");
+    huaban.type = "ease";
+}
+
 colorPicker.onclick= function(e){
     allBtn.forEach(function (item, i) {
         item.classList.remove("active");
@@ -100,14 +152,14 @@ colorPicker.onclick= function(e){
 // 监听鼠标按下事件
 canvas.onmousedown = function (e) {
     huaban.isdraw = true;
-    if (huaban.type === "rect") {
+    if (huaban.type === "rect" || huaban.type === "circle") {
         var x = e.pageX - canvas.offsetLeft;
         var y = e.pageY - canvas.offsetTop;
         huaban.beginX = x;
         huaban.beginY = y;
-        console.log(huaban.beginX)
-        console.log(x+"111111111")
-    }
+        // console.log(huaban.beginX)
+        // console.log(x+"111111111")
+    } 
 
 }
 // 监听鼠标抬起事件
