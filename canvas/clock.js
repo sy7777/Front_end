@@ -1,18 +1,6 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-</head>
-
-<body>
-    <canvas id="canvas1" height="600" width="800"></canvas>
-    <script>
-
-        var canvas1 = document.querySelector("#canvas1");
+var canvas1 = document.querySelector("#canvas1");
         var cxt = canvas1.getContext("2d");
-
+        cxt.font = "40px Times";
         function renderClock() {
             // 清除内容
             cxt.clearRect(0, 0, 800, 600);
@@ -48,12 +36,16 @@
             for (var i = 0; i < 12; i++) {
                 cxt.rotate(Math.PI / 6);
                 cxt.beginPath();
-                cxt.moveTo(180, 0);
+                cxt.moveTo(170, 0);
                 cxt.lineTo(200, 0);
                 cxt.strokeStyle = "darkgrey";
-                cxt.lineWidth = 10;
+                cxt.lineWidth = 7;
                 cxt.stroke();
                 cxt.closePath();
+
+                cxt.fillText(i+1, 140, 10);
+                // cxt.save()
+                // cxt.translate(-400, -300);
                 // cxt.fillStyle = "blue";
                 // cxt.fillRect(100,100,300,100);
                 // cxt.fillStyle = "pink";
@@ -91,7 +83,7 @@
             // 绘制fen针
             cxt.beginPath();
             // 根据分针进行旋转
-            cxt.rotate(2 * Math.PI / 60 * min + 2 * Math.PI * 3600 * sec)
+            cxt.rotate(2 * Math.PI / 60 * min + 2 * Math.PI / 3600 * sec)
             cxt.moveTo(-20, 0);
             cxt.lineTo(150, 0);
             cxt.strokeStyle = "darkblue";
@@ -127,7 +119,3 @@
         setInterval(function () {
             renderClock();
         }, 1000)
-    </script>
-</body>
-
-</html>
