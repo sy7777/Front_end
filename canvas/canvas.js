@@ -17,13 +17,11 @@ var huaban = {
     beginX: 0,
     beginY: 0,
     currentColor:"black",
-    rx:0,
-    ry:0,
-
     imageData: null,
+
     brushFn: function (e) {
-        var x = e.pageX - canvas.offsetLeft;
-        var y = e.pageY - canvas.offsetTop;
+        var x = e.clientX - canvas.offsetLeft;
+        var y = e.clientY - canvas.offsetTop;
         painting.beginPath();
         painting.arc(x, y, 3, 0, 2 * Math.PI);
         painting.fillStyle=this.currentColor;
@@ -32,8 +30,8 @@ var huaban = {
     },
 
     rectFn: function (e) {
-        var x = e.pageX - canvas.offsetLeft;
-        var y = e.pageY - canvas.offsetTop;
+        var x = e.clientX - canvas.offsetLeft;
+        var y = e.clientY - canvas.offsetTop;
         painting.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
         if(huaban.imageData !=null){
             painting.putImageData(huaban.imageData,0,0,0,0,canvas.offsetWidth,canvas.offsetHeight)
@@ -48,10 +46,10 @@ var huaban = {
 
     circleFn: function(e){
         console.log(e)
-        var x = e.pageX - canvas.offsetLeft;
-        var y = e.pageY - canvas.offsetTop;
+        var x = e.clientX - canvas.offsetLeft;
+        var y = e.clientY - canvas.offsetTop;
         var rx = x - huaban.beginX;
-        var ry = x - huaban.beginY;
+        var ry = y - huaban.beginY;
         // var ry = e.offsetY - canvas.offsetTop;
         var r = Math.sqrt(rx*rx+ry*ry);
         painting.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
@@ -116,8 +114,6 @@ circle.onclick = function (e) {
 
 ease.onclick = function(e){
     allBtn.forEach(function (item, i) {
-        // console.log(item)
-        // console.log(i)
         item.classList.remove("active");
 
     })
@@ -140,15 +136,7 @@ colorPicker.onclick= function(e){
         huaban.currentColor = e.target.value;
 }
 }
-/* colorPicker.onchange= function(e){
-    allBtn.forEach(function (item, i) {
-        item.classList.remove("active");
-    
-    })
-    colorPicker.classList.add("active");
-    console.log(e)
-    // huaban.type = "colorPicker"
-} */
+
 // 监听鼠标按下事件
 canvas.onmousedown = function (e) {
     huaban.isdraw = true;
@@ -178,9 +166,3 @@ canvas.onmousemove = function (e) {
     }
 
 }
-
-/* colorPicker.onchange = function(e){
-    console.log(e)
- huaban.currentColor = e.target.value;
-
-} */
