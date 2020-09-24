@@ -1,0 +1,39 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas1{
+            /* background-image: url("../learning_single/img/selfie.jpg"); */
+        }
+    </style>
+    
+</head>
+
+<body>
+    <canvas id="canvas1" width="600" height="600"></canvas>
+    <script>
+
+        var canvas1 = document.querySelector("#canvas1");
+        var ctx = canvas1.getContext("2d");
+        console.log(ctx);
+
+
+        var img = new Image();
+        img.src = "../learning_single/img/selfie.jpg";
+
+        var img2 = new Image();
+        img2.src = "../learning_single/img/selfie.jpg";
+        // 图片载入后在绘制
+        img.onload = function(){
+            // 绘制图片(图片对象，X位置, Y位置,宽度，高度)       
+            // 绘制图片(图片对象，X位置, Y位置,宽度，高度)       
+            ctx.drawImage(img, 50, 150, 700, 550);
+            console.log(img);
+            ctx.fillText("水印",100, 100);
+        }
+    </script>   
+</body>
+</html>
