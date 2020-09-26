@@ -1,4 +1,4 @@
-import {lcAlert} from "../learning_single/JS/fengzhuang.js";
+import {lcAlert} from "../../learning_single/JS/fengzhuang.js";
 
 var showDiv = document.querySelector("#showCode");
 var score = 0;
