@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #ddd{
+            height: 400px;
+            width: 400px;
+            background-color : firebrick;
+        }
+    </style>
+    <title>箭头函数</title>
+    
+</head>
+<body>
+    <div id="ddd"></div>
+    <script>
+        var d1 = document.querySelector("#ddd");
+/*         d1.onclick = function(){
+            setInterval(function(){
+                // 输出window
+                console.log(this);
+                 // 没有效果
+                this.style.backgroundColor = `rgb(${parseInt(Math.random()*255)},
+                ${parseInt(Math.random()*255)},
+                ${parseInt(Math.random()*255)}
+            )`
+            // 加了.bind(),这个this就是指d1这个div
+            }.bind(this),1000)
+        } */
+
+        const f = () => {
+            console.log('f: ', this);
+        }
+        f();
+        // 箭头函数
+        d1.onclick = function(){
+            // 箭头函数指的就是外部的这个this，不会因为环境变化而变化
+            console.log(this); 
+            setInterval(()=>{
+                // 输出div
+                console.log(this);
+    
+                this.style.backgroundColor = `rgb(${parseInt(Math.random()*255)},
+                ${parseInt(Math.random()*255)},
+                ${parseInt(Math.random()*255)}
+            )`
+            },1000)
+        }
+
+        function fn1(a,b){
+            return a+b;
+        }
+        console.log(fn1(1,2));
+        // 一样的
+        let fn2 = (a,b) => a + b;
+        // let fn2 = (a,b) => {a + b}; //undefined
+        console.log(fn2(1,2));
+    </script>
+</body>
+</html>

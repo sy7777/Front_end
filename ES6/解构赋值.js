@@ -1,12 +1,4 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        // 可以依次赋值
+// 可以依次赋值
         // let [user1, user2, user3] = ["老王", "老李", "老陈"];
 
         // 输出老李,老陈,隔壁老王
@@ -27,7 +19,3 @@
 
         var{name,type,like} = user;
         console.log(`${name},${type},${like}`);
-
-    </script>
-</body>
-</html>

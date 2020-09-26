@@ -1,12 +1,4 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        var stars = ["Bob","Mike","David","Eric"];
+var stars = ["Bob","Mike","David","Eric"];
         for (let i =0;i<stars.length; i++){
             console.log(`${i}:${stars[i]}`);
         }
@@ -42,6 +34,3 @@
             */
             console.log(`${key}:${value}`);
         }
-    </script>
-</body>
-</html>
