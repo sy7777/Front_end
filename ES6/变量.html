@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <button>按钮6</button>
+    <button>按钮7</button>
+    <button>按钮8</button>
+    <button>按钮9</button>
+    <button>按钮10</button>
+    
+    <script>
+        // 块级全局变量
+        var a = 12;
+        var b = 45
+        {
+            var a = 23;
+        }
+        {
+            // console.log(b); //报错，如果块级有变量，let就近调用，如果没有（后面这一行）会调用全局变量也就是45
+            let b = 56;
+            console.log(b); //56
+        }
+
+        console.log(a); //ouput = 23
+        console.log(b); //ouput = 45 {里面不改变外面的值，只在块级里改变}
+        var allBtn = document.querySelectorAll("button");
+        for(let i = 1; i<=10; i++){
+            // 如果用var声明变量，全部都显示按钮10，无论声明在何处，都会被提至其所在作用于的顶部
+            // 如果用let声明变量，则123依次显示
+            
+            allBtn[(i-1)].onclick = function(){
+                console.log("按钮"+(i))
+            
+            }
+        }
+
+        // const 声明常量，一般大写，且不能再次被赋值,只在局部和块级作用域起作用
+        // 不能重复声明
+        // const a ;//报错,一旦声明变量，应该立即赋值！！
+        const HOST ="www.google.com";
+        HOST = 123
+        console.log(HOST);
+    </script>
+</body>
+</html>
