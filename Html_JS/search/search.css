@@ -19,22 +19,22 @@ body{
     justify-content: center;
     align-items: center; */
 }
-.main .icon{
+.main .header{
     width: 100vw;
     height: 14vh;
-    background-color: deepskyblue;
+    /* background-color: deepskyblue; */
     display: flex;
     position: relative;
     align-items: center;
 }
-.icon .img{
+.header .icon{
     width: 80px;
     height:60px;
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     right: 10rem;
-    background-image: url('../img/icon/search1.png');
+    background-image: url('../learning_single/img/icon/search1.png');
 }
 .search-page{
     width: 100vw;
@@ -100,9 +100,11 @@ body{
     background: #6b6b83;
     position: relative;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .item{
-    width: 250px;
+    width: 350px;
     background: rgb(110, 108, 108);
     height: 400px;
     margin: 17px 17px;
@@ -112,22 +114,25 @@ body{
     /* justify-content: center; */
     /* position: relative; */
     flex-direction: column;
+    box-sizing: content-box;
 }
 .item-img{
     width: 200px;
     background: rgba(136, 41, 41, 0.3);
-    height: 300px;
+    height: 250px;
     padding: 7px 7px;
+    background-size: contain;
     /* position: absolute; */
     
 }
 .item-name{
     /* position: absolute; */
-    width: 200px;
-    height: 30px;
+    width: 300px;
+    height: 50px;
     padding: 7px 7px;
     font-size: 19px;
     font-weight: 800;
+    margin-bottom: 7px;
 }
 .item-year{
     width: 200px;
