@@ -131,7 +131,7 @@
           success: function (data) {
             //处理data数据
             itemList = data.subject_collection_items;
-            console.log(data.length);
+
             renderMovieList(itemList);
             // console.log(data);
             //   console.log(itemList[moviename]);
@@ -179,15 +179,16 @@
         // console.log(start);
         // console.log(typeof(start));
         const hotValue = hotBtn.getAttribute("ischecked");
+        // console.log(typepof hotValue);
         const topValue = topBtn.getAttribute("ischecked");
         const comingValue = comingBtn.getAttribute("ischecked");
         try {
-          if (hotValue == true && topValue == false && comingValue == false) {
+          if (hotValue == "true" && topValue == "false" && comingValue == "false") {
             console.log(hotBtn.getAttribute("ischecked"));
-            var http = `https://frodo.douban.com/api/v2/subject_collection/movie_showing/items?start=${start}&count=&apiKey=054022eaeae0b00e0fc068c0c0a2102a`;
-          }else if(hotValue == false&& topValue == true && comingValue == false) {
+            var http = `https://frodo.douban.com/api/v2/subject_collection/movie_showing/items?start=${start}&count=0&apiKey=054022eaeae0b00e0fc068c0c0a2102a`;
+          }else if(hotValue == "false" && topValue == "true" && comingValue == "false") {
             var http = `https://frodo.douban.com/api/v2/subject_collection/movie_top250/items?start=${start}&count=0&apiKey=054022eaeae0b00e0fc068c0c0a2102a`;
-          }else if(hotValue == false && topValue == false && comingValue == true){
+          }else if(hotValue == "false" && topValue == "false" && comingValue == "true"){
             var http = `https://frodo.douban.com/api/v2/subject_collection/movie_soon/items?start=${start}&count=0&apiKey=054022eaeae0b00e0fc068c0c0a2102a`;
           }else{
             console.log("error");
@@ -198,6 +199,7 @@
           url: http,
           success: function (data) {
             //处理data数据
+            // scrollTo(0, 0);
             itemList = data.subject_collection_items;
             renderMovieList(itemList);
             // console.log(data);
@@ -208,7 +210,7 @@
           },
         });
         
-      } catch (error) {
+      }catch (error) {
           console.log(error);
         }
       }       
@@ -218,7 +220,7 @@
 
         renderLoading();
         
-          // scrollTo(0, 0);
+       
         
       };
     </script>
