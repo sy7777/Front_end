@@ -45,12 +45,12 @@
       </div>
 
       <div class="show-page">
-        <!-- <div class="item">
+        <div class="item">
                 <div class="item-img"></div>
                 <div class="item-name">通往春天的列车</div>
                 <div class="item-year">2012</div>
                 <div class="item-brief">一个小故事极大更加疯狂地根本港二</div>
-            </div> -->
+            </div>
         <!-- <div class="item">
                 <div class="item-img"></div>
                 <div class="item-name">通往春天的列车</div>
@@ -146,10 +146,6 @@
       function renderMovieList(itemList) {
         itemList.forEach(function (item, i) {
           var imgUrl = item.cover.url.toString();
-          // console.log(imgUrl.toString());
-          // var imgUrl = "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2620083313.webp";
-          // var imgUrl = itemList[i].cover.url;
-          // console.log(imgUrl);
           var movieName = item.title;
           var movieYear = item.year;
           var movieActors = item.actors;
@@ -214,14 +210,10 @@
           console.log(error);
         }
       }       
+      
       //监听刷新事件
-
       loadingDiv.onclick = function() {
-
-        renderLoading();
-        
-       
-        
+        renderLoading();      
       };
     </script>
  <!-- <script src="search.js"></script>  -->
