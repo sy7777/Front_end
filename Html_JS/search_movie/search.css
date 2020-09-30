@@ -43,6 +43,7 @@ body {
 }
 .header .btn:active {
   transform: translateY(10px);
+  background: rgba(8, 8, 8, 0.3);
   box-shadow: 3px 5px 0 #ff9100, 0 15px 5px rgba(0, 0, 0, 0.3);
 }
 .header .icon {
@@ -151,7 +152,8 @@ body {
   height: 40px;
   line-height: 40px;
   font-size: 19px;
-  font-weight: 800;
+  font-weight: 900;
+  color: floralwhite;
   /* margin-bottom: 7px; */
 }
 .item-year {
@@ -159,11 +161,13 @@ body {
   /* height: 30px;
   line-height: 30px; */
   padding: 7px 7px;
+  color: floralwhite;
 }
 .item-brief {
   width: 270px;
   flex: 1;
   padding: 1px 1px;
+  color: floralwhite;
 }
 .loading{
   text-align: center;
@@ -171,6 +175,28 @@ body {
   width: 100vw;
   position: fixed;
   bottom: 0;
-  background-color: rgba(66, 35, 10, 0.5);
+  background-color: rgba(66, 35, 10, 0.3);
   color: seashell;
+}
+.goTop{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: bolder;
+  color: aliceblue;
+  text-align: center;
+  line-height: 30px;
+  background-color: rgba(192, 105, 33, 0.5);
+  /* background-color: black; */
+  position: fixed;
+  right: 15px;
+  bottom: 40px;
+  box-shadow: 3px 4px 3px #a0756e, 0 4px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.5s linear;
+  z-index: 999;
+}
+.goTop:hover{
+  transform: translateY(10px);
+  box-shadow: 4px 5px 4px #a0756e, 0 4px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.5s linear;
 }

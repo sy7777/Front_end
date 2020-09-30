@@ -46,10 +46,10 @@
 
       <div class="show-page">
         <div class="item">
-                <div class="item-img"></div>
-                <div class="item-name">通往春天的列车</div>
-                <div class="item-year">2012</div>
-                <div class="item-brief">一个小故事极大更加疯狂地根本港二</div>
+          <img class="item-img" style="padding-left: 40px;" src='../learning_single/img/gif/pigno.gif'>
+                <div class="item-name" >你的观影记录</div>
+                <div class="item-year" >2020</div>
+                <div class="item-brief" >还什么都没有呢，点击上方开始你的电影之路吧...</div>
             </div>
         <!-- <div class="item">
                 <div class="item-img"></div>
@@ -63,8 +63,11 @@
                 <div class="item-year">2012</div>
                 <div class="item-brief">一个小故事极大更加疯狂地根本港二</div>
             </div> -->
+            
       </div>
+      <div class="goTop">↑</div>
       <div class="loading">Loading……</div>
+     
     </div>
 
     <!-- <script src="getAjax.js"></script> -->
@@ -75,6 +78,7 @@
       var searchBtn = document.querySelector(".search-btn");
       var hotBtn = document.querySelector(".hot");
       var topBtn = document.querySelector(".top");
+      var gotopBtn = document.querySelector(".goTop");
       var comingBtn = document.querySelector(".coming");
       var searchText = document.querySelector(".search-text");
       const inputElement = document.querySelector('input[type="text"]');
@@ -117,7 +121,9 @@
         showPageDiv.innerHTML = "";
         renderMovieType(httpComing);
       };
-
+      gotopBtn.onclick = function(){
+         scrollTo(0, 0);
+      }
       function renderMovieType(http) {
         $.ajax({
           crossOrigin: true,
@@ -157,11 +163,12 @@
             }     */
           var itemDiv = document.createElement("div");
           itemDiv.className = "item";
-          itemDiv.innerHTML = ` <img class="item-img" src='${imgUrl}'>
-                
+          itemDiv.innerHTML = ` 
+          <img class="item-img" src='${imgUrl}'>
                 <div class="item-name">${movieName}</div>
                 <div class="item-year">${movieYear}</div>
                 <div class="item-brief">Actors:${movieActors}</div>
+                
  
         `;
           showPageDiv.appendChild(itemDiv);
@@ -195,7 +202,7 @@
           url: http,
           success: function (data) {
             //处理data数据
-            // scrollTo(0, 0);
+            
             itemList = data.subject_collection_items;
             renderMovieList(itemList);
             // console.log(data);
