@@ -8,16 +8,21 @@
     <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.8.10/themes/smoothness/jquery-ui.css" type="text/css"> -->
 <!-- <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script> -->
     <link rel="stylesheet" href="search.css" />
+    
+    <script type="text/javascript" src="js/jquery.ajax-cross-origin.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
       integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous" >
+    </script>
   </head>
 
   <body>
     <div class="main">
-      <div class="header icon">
+      <div class="header">
+        <div class="btn hot">正在热映</div>
+        <div class="btn top">高分电影</div>
+        <div class="btn coming">即将上映</div>
         <div class="icon"></div>
         <!-- <img src="../img/icon/search.png" alt="" srcset=""> -->
       </div>
@@ -64,6 +69,9 @@
       var searchBarDiv = document.querySelector(".search-page");
       var showPageDiv = document.querySelector(".show-page");
       var searchBtn = document.querySelector(".search-btn");
+      var hotBtn = document.querySelector(".hot");
+      var topBtn = document.querySelector(".top");
+      var comingBtn = document.querySelector(".coming");
       var searchText = document.querySelector(".search-text");
       const inputElement = document.querySelector('input[type="text"]');
       var itemList = [];
@@ -71,23 +79,56 @@
       var body = document.querySelector("body");
       var movieName = "千与千寻";
       var movieId = "";
-    //   document.domain = "t.yushu.im"
-
      
     //   var http = `http://t.yushu.im/v2/movie/top250?apikey=0b2bdeda43b5688921839c8ecb20399b`;
-      var http = `https://frodo.douban.com/api/v2/subject_collection/movie_showing/items?start=0&count=0&apiKey=054022eaeae0b00e0fc068c0c0a2102a`;
+
+    // 正在热映
+      // var httpHot = `http://t.yushu.im/v2/movie/in_theaters?apikey=0b2bdeda43b5688921839c8ecb20399b`;
+
+    // 猫眼电影
+    //  var http = `https://m.maoyan.com/ajax/moreClassicList?sortId=1&showType=3&limit=10`;
+
+    // 可用的
+      var httpHot = `https://frodo.douban.com/api/v2/subject_collection/movie_showing/items?start=0&count=0&apiKey=054022eaeae0b00e0fc068c0c0a2102a`;
+      var httpTop = `https://frodo.douban.com/api/v2/subject_collection/movie_top250/items?start=0&count=0&apiKey=054022eaeae0b00e0fc068c0c0a2102a`;
+      var httpComing = `https://frodo.douban.com/api/v2/subject_collection/movie_soon/items?start=0&count=0&apiKey=054022eaeae0b00e0fc068c0c0a2102a`;
+      
       // var http = "https://api.apiopen.top/getJoke?page=1&count=10&type-video;"
       var itemList = [];
-      $.ajax({
+
+      hotBtn.onclick = function(){
+        console.log(showPageDiv);
+        // showPageDiv.removeChild(itemList)
+          showPageDiv.innerHTML = "";
+          renderMovieType(httpHot);
+  
+        
+      }
+      topBtn.onclick = function(){
+        showPageDiv.innerHTML = "";
+        renderMovieType(httpTop);
+      }
+      comingBtn.onclick = function(){
+        showPageDiv.innerHTML = "";
+        renderMovieType(httpComing);
+      }
+
+
+ function renderMovieType(http){
+  $.ajax({
+        crossOrigin: true,
         dataType: "jsonp",
         method: "GET",
         url: http,
+        xhrFields: {
+            withCredentials: true // 这里设置了withCredentials
+        },
         // data: {page:"1",count:"10"},
         success: function (data) {
           //处理data数据
           itemList = data.subject_collection_items;
             renderMovieList(itemList)
-        //   console.log(data);
+          console.log(data);
           //   console.log(itemList[moviename]);
         },
         error: function(e){
@@ -95,6 +136,8 @@
         },
         jsonpCallback: "handleCallback"
       });
+ }
+      
 
       function renderMovieList(itemList) {
         itemList.forEach(function (item, i) {
