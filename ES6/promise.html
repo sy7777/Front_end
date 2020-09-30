@@ -31,13 +31,23 @@
             });
             // console.log(ajaxP);
         }
-        var ajaxP = getAjax(url);
-        console.log(ajaxP);
+        // var ajaxP = getAjax(url);
+        // console.log(ajaxP);
 
-        ajaxP.then((res)=>{
-            var data = JSON.parse(res.responseText);
-            console.log(data);
+        // ajaxP.then((res)=>{
+        //     var data = JSON.parse(res.responseText);
+        //     console.log(data);
 
+        // }).catch((error)=>{
+        //     console.log(error);
+        // })
+        fetch(url).then((res)=>{
+            console.log(res.json);
+            var result = res.json();
+            result.then((result)=>{
+                console.log(result);
+            })
+            
         })
 
     </script>
