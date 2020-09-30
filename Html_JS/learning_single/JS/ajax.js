@@ -1,11 +1,4 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
+
         //1.创建XHR对象
         var xhr = new XMLHttpRequest();
         var body = document.querySelector("body")
@@ -28,6 +21,3 @@
             }
             
         }
-    </script>
-</body>
-</html>
