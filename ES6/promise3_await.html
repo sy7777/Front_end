@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1{
+            height: 200px;
+            width: 200px;
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"></div>
+    <script>
+        const d1 = document.querySelector("#d1");
+        let fnPromise1 = function(){
+            return new Promise((res,rej)=>{
+                setTimeout(()=>{
+                    d1.style.backgroundColor = "blue";
+                    // 传的结果数据
+                    res("3s改颜色")
+                }, 2000)
+            })
+        }
+        let fnPromise2 = function(){
+            return new Promise((res,rej)=>{
+                setTimeout(()=>{
+                    d1.style.backgroundColor = "yellow";
+                    // 传的结果数据
+                    res("2s改颜色")
+                }, 1000)
+            })
+        }
+        let fnPromise3 = function(){
+            return new Promise((res,rej)=>{
+                
+                    rej("失败了")
+               
+            })
+        }
+
+        async function demo(){
+            // 拿到一个对象
+            try {
+                const p1 = await fnPromise1();
+                const p2 = await fnPromise2();
+                const p3 = await fnPromise3();
+                // 123455最先输出，然后是3秒输出，然后是2秒输出，相当于依次向下执行
+                // p1运行完了，在进行P2，没有回调函数了
+                console.log(p1);
+                console.log(p2);
+                console.log(p3);
+            } catch (error) {
+                console.log(error);
+            }
+            
+        }
+        demo();
+        console.log("123455");
+
+
+        // 
+        // const p1 = fnPromise();
+        // p1.then((res)=>{
+        //     console.log(res);
+        // })
+    </script>
+</body>
+</html>

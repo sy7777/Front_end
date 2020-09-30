@@ -120,7 +120,7 @@ body {
   justify-content: space-evenly;
 }
 .item {
-  width: 350px;
+  width: 270px;
   background: rgb(110, 108, 108);
   height: 400px;
   margin: 17px 17px;
@@ -141,20 +141,31 @@ body {
   /* position: absolute; */
 }
 .item-name {
-  /* position: absolute; */
-  width: 300px;
-  height: 50px;
-  padding: 7px 7px;
+
+  width: 270px;
+  height: 40px;
+  /* line-height: 40px; */
   font-size: 19px;
   font-weight: 800;
-  margin-bottom: 7px;
+  /* margin-bottom: 7px; */
 }
 .item-year {
   width: 200px;
-  height: 30px;
+  /* height: 30px;
+  line-height: 30px; */
   padding: 7px 7px;
 }
-.item-brieft {
-  width: 200px;
-  padding: 7px 7px;
+.item-brief {
+  width: 270px;
+  flex: 1;
+  padding: 1px 1px;
+}
+.loading{
+  text-align: center;
+  height: 20px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(66, 35, 10, 0.5);
+  color: seashell;
 }
