@@ -57,7 +57,57 @@
         // let fn2 = (a,b) => {a + b}; //undefined
         console.log(fn2(1,2));
 
-        p1 = Promise.resolve("成功的对象");
+        // 1. this是静态的，this始终指向函数声明时所在作用域下的this值
+        function getName(){
+            console.log(this.name);
+        }
+
+        let getName2 = ()=>{
+            console.log(this.name);
+        }
+
+        // 设置window对象的name属性
+        window.name = "UQ";
+        const school = {
+            name:"ATGUIGU"
+        }
+
+        /* 直接调用方法，两者均显示UQ，因为第二个方法在全局作用域下声明的
+        所以this也是指向window */
+        // getName();
+        // getName2();
+
+        //call方法调用，会改变this指向,箭头函数无论如何调用，this都指向在声明函数时，所在作用域下的对象
+        // getName.call(school);   //ATGUIGU
+        // getName2.call(school);   //UQ
+
+        // 2. 不能作为构造实例化对象
+        let Person = (name, age) =>{
+            this.name = name;
+            this.age = age;
+        }
+        // let me = new Person("xiao", 30);
+        // console.log(me); //报错Person is not a constructor
+
+        // 3、不能使用arguments变量
+        let fn = ()=>{
+            console.log(arguments);
+        }
+        // fn(1,2,3);  //报错，arguments is not defined.
+
+        /* 4、箭头函数的缩写
+             1）省略小括号，当形参只有一个的时候
+             2）省略花括号，当代码题只有一条语句的时候，此时return也必须省略
+             而且语句执行结果就是函数返回值
+        */
+
+        let add = n =>{
+            return n+n;
+        }
+        console.log(add(9));
+
+        let pow = (n) => n*n;
+        console.log(pow(4));
     </script>
 </body>
 </html>

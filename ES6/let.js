@@ -21,3 +21,6 @@ let star = "周扬青" */
     // 会显示UQ，这个作用域块没有，会向上一级寻找school变量
     fn();
 }
+
+{const AAB = "player";}
+console.log(AAB); //报错
