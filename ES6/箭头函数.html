@@ -33,10 +33,10 @@
             console.log('f: ', this);
         }
         f();
-        // 箭头函数
+        // 箭头函数事件1
         d1.onclick = function(){
-            // 箭头函数指的就是外部的这个this，不会因为环境变化而变化
-            console.log(this); 
+            // 箭头函数指的就是外部的这个this，不会因为环境变化而变化,这个this指向事件源d1
+            console.log("fn"+this); 
             setInterval(()=>{
                 // 输出div
                 console.log(this);
@@ -57,7 +57,7 @@
         // let fn2 = (a,b) => {a + b}; //undefined
         console.log(fn2(1,2));
 
-        // 1. this是静态的，this始终指向函数声明时所在作用域下的this值
+        // 1. 箭头函数this是静态的，this始终指向函数声明时所在作用域下的this值
         function getName(){
             console.log(this.name);
         }
@@ -108,6 +108,33 @@
 
         let pow = (n) => n*n;
         console.log(pow(4));
+
+
+        // 箭头函数事件2
+        const arr = [1,2,3,4,60,20,30];
+/*         const result = arr.filter(item =>{
+            if (item%2 === 0){
+                return true;
+            }else{
+                return false;
+            }
+
+        }) */
+
+        // 简写
+        const result = arr.filter(item => item%2 ===0 )
+        console.log(result);
+
+        /* 
+        箭头函数适合与this无关的回调，定时器，数组方法回调
+        不适合与this有关的回调，事件回调，对象方法
+        */
+       {
+           name: "shangguigu",
+           getName3: function(){
+               this.name;//指向最外层黄色大括号，箭头函数则指向外层作用域
+           }
+       }
     </script>
 </body>
 </html>

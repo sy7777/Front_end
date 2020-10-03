@@ -1,4 +1,15 @@
+// [...]扩展运算符能将数组转化为逗号分隔的参数序列
 var arr=["老王", "老李", "老陈"];
+function chunwan() {
+    console.log(arguments);
+}
+// [Arguments] { '0': [ '老王', '老李', '老陈' ] }只有一个数组参数
+chunwan(arr);
+
+// [Arguments] { '0': '老王', '1': '老李', '2': '老陈' }是一个对象三个参数
+chunwan(...arr);
+
+
 // 复制数组
 var arr1=[...arr];
 console.log(arr == arr1);  //false内存地址不一样
