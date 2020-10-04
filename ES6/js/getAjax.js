@@ -18,7 +18,7 @@ function getAjax(httpUrl) {
         }
       } else if (!xhr.readyState === 4) {
         //6. 处理失败结果
-        rej(xhr);
+        rej(xhr.status);
       }
     };
     //4.发送数据
