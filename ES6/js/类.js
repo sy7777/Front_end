@@ -23,6 +23,14 @@ class Phone{
     call(){
         console.log("I can call");
     }
+    get price(){
+        console.log("价格属性被读取了");
+        return "I love you."
+    }
+    // 必须有参数
+    set price(newPrice){
+        console.log("价格属性被修改了");
+    }
 }
 
 class SmartPhone extends Phone{
@@ -43,6 +51,8 @@ class SmartPhone extends Phone{
 let onePlus = new Phone("1+", 1999)
 console.log(onePlus);
 const xiaomi = new SmartPhone("小米", 1999, "褐色","4.7inches");
-xiaomi.call();
+/* xiaomi.call();
 xiaomi.photo();
-xiaomi.playGame();
+xiaomi.playGame(); */
+console.log(xiaomi.price); 
+xiaomi.price = "free"
