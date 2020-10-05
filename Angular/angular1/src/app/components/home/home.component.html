@@ -1,1 +1,34 @@
-<p>home works!</p>
+<h1>引入图片</h1>
+<img src="assets/images/pigSmile.gif" />
+<!-- <img [src]="picUrl"/> -->
+<h1>ngFor循环数据，显示索引值</h1>
+<ul>
+  <li *ngFor="let item of newsLists; let key=index">{{key}}--{{item.title}}</li>
+</ul>
+<h1>ngIf条件判断</h1>
+<div *ngIf="flag">true</div>
+<div *ngIf="!flag">false</div>
+<ul>
+  <li *ngFor="let item of newsLists; let key=index" >
+    <span *ngIf="key===1" class="red"> {{key}}--{{item.title}}</span>
+    <span *ngIf="key!==1"> {{key}}--{{item.title}}</span>
+  </li>
+</ul>
+<h1>ngSwitch条件判断</h1>
+
+<span [ngSwitch]="orderStatus">
+    <p *ngSwitchCase="1">已支付</p>
+    <p *ngSwitchCase="2">确认订单</p>
+    <p *ngSwitchCase="3">已发货</p>
+    <p *ngSwitchCase="4">已收货 </p>
+
+    <p *ngSwitchDefault>无效</p>
+</span>
+<h1>属性语句[ngClass]\[ngStyle]</h1>
+<!-- 动态改变class样式 -->
+<div [ngClass]="{red: flag, orange:!flag}">ngClass显示</div>
+<li *ngFor="let item of newsLists; let key=index" [ngClass]="{red: key==1, blue:key===0,orange:key===2}" >
+  {{key}}--{{item.title}}
+</li>
+<hr>
+<p [ngStyle]="{color: 'skyblue'}">我是一个P标签</p>

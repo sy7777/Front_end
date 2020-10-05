@@ -23,6 +23,16 @@ private 私有，只有这个类可以访问
   public arr=["111","2222","3333"];
   public list:any[]=[];//推荐这种方式
   public lists:Array<any>=[];
+  public userlists:any[]=[{
+    username:"张三",
+    age: 20
+  },{
+    username:"李四",
+    age: 24
+  },{
+    username:"王五",
+    age: 25
+  }]
 
   constructor() {
     this.message = "这是给属性赋值，也叫改变属性的值"
