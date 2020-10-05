@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   // 1已支付 2确认订单 3已发货 4已收货 5无效
   public orderStatus:number =3;
   public today:any = new Date();
+  public title:string = "我是一个数据";
   constructor() {
     console.log(this.today);
 
@@ -28,4 +29,24 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  run(){
+    alert("这是一个自定义方法");
+  }
+  getData(){
+    alert(this.title);
+  }
+  setData(){
+    this.title = "我是一个改变后的title";
+  }
+  keyDown(e){
+    console.log(e);
+    if(e.key === "Enter"){
+      console.log("按了一下回车");
+
+    }else{
+      console.log(e.target.value);
+    }
+
+
+  }
 }

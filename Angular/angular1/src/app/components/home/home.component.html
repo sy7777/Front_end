@@ -32,3 +32,14 @@
 </li>
 <hr>
 <p [ngStyle]="{color: 'skyblue'}">我是一个P标签</p>
+<h1>管道</h1>
+<span>{{today | date:'yyyy-MM-dd HH:mm:ss'}}</span>
+<h1>事件</h1>
+<strong>{{title}}</strong>
+<button (click)="run()">执行事件</button>
+<button (click)="getData()">获取数据</button>
+<button (click)="setData()">改变数据</button>
+<h1>表单事件</h1>
+<input type="text" (keydown)="keyDown($event)">
+<h1>双向数据绑定MVVM 只针对表单</h1>
+
