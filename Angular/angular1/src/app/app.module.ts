@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 /* 这个文件是angular根模块，告诉angular如何组装应用 */
 
 // BrowserModule,浏览器解析的模块
@@ -9,13 +10,16 @@ import { AppComponent } from './app.component';
 import { NewsComponent } from './components/news/news.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
+
+// import { FormsModule } from "@angular/forms";
 // @NgModule装饰器， @NgModule接受一个元数据对象，告诉angular如何编译和启动应用
 @NgModule({
   declarations: [ //配置当前项目运行的组件
     AppComponent, NewsComponent, HomeComponent, HeaderComponent
   ],
   imports: [  //配置当前项目运行依赖的其他模块
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],  //配置当前项目所需的服务
   bootstrap: [AppComponent]

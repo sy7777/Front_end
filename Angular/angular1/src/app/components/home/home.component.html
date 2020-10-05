@@ -42,4 +42,6 @@
 <h1>表单事件</h1>
 <input type="text" (keydown)="keyDown($event)">
 <h1>双向数据绑定MVVM 只针对表单</h1>
-
+<input type="text" [(ngModel)]="keywords" />{{keywords}}
+<button (click)="change()">改变keywords的值</button>
+<button (click)="getKeywords()">获取keywords的值</button>

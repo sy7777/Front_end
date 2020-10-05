@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   public orderStatus:number =3;
   public today:any = new Date();
   public title:string = "我是一个数据";
+  public keywords:string = "这是默认的keywords";
   constructor() {
     console.log(this.today);
 
@@ -46,7 +47,12 @@ export class HomeComponent implements OnInit {
     }else{
       console.log(e.target.value);
     }
-
+  }
+  change(){
+    this.keywords="我是改变后的keywords."
+  }
+  getKeywords(){
+    console.log(this.keywords);
 
   }
 }
