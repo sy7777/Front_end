@@ -1,0 +1,22 @@
+<!-- <app-header></app-header> -->
+<h1>这是给模板绑定数据</h1>
+<p>{{title}}</p>
+<p>{{username}}</p>
+<h2>{{student}}</h2>
+<h3>{{message}}</h3>
+<hr>
+<h1>这是给模板绑定属性</h1>
+<div title="我是一个DIV">鼠标放上去看一下</div>
+<div [title]="student">张三</div>
+<hr>
+<h1>模板绑定HTML</h1>
+<span>{{content}}</span><br>
+<span [innerHTML]="content" class="red"></span><br>
+<hr>
+<h1>HTML里面直接做运算</h1>
+<span>1+2={{1+2}}</span>
+<hr>
+<h1>angular做循环</h1>
+<ol>
+  <li *ngFor="let item of arr">{{item}}</li>
+</ol>
