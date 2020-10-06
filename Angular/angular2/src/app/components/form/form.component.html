@@ -1,7 +1,31 @@
 <h2>人员登记系统</h2>
 <div class="people-list">
   <ul>
-    <li>姓 名：<input type="text"></li>
+    <li>姓 名：<input type="text" [(ngModel)]="peopleInfo.username" class="name-input"></li>
+    <li>性 别：
+      <!-- 如果不写name，则可以同时选择几个，name写一样的则只能选择一个 -->
+      <input type="radio" value="male"name="gender" id="male" [(ngModel)]="peopleInfo.gender"><label for="male">男</label>&nbsp;&nbsp;
+      <input type="radio" value="female" name="gender"  id="female"  [(ngModel)]="peopleInfo.gender"><label for="female">女</label>&nbsp;&nbsp;
+      <input type="radio" value="genderB" name="gender"  id="genderBi"  [(ngModel)]="peopleInfo.gender"><label for="genderBi">不确定</label>&nbsp;&nbsp;
+    </li>
+    <li>
+      城 市：<select name='city' id='city' [(ngModel)]="peopleInfo.city">
+        <option *ngFor="let item of peopleInfo.cities" [value]="item">{{item}}</option>
+      </select>
+    </li>
+    <li>
+      爱 好：
+      <span *ngFor="let item of peopleInfo.hobbies; let i = index">
+        <input type="checkbox" name="" [id]="'checked'+i" [(ngModel)]="item.checked"><label [for]="'checked'+i" >{{item.title}}</label>&nbsp; &nbsp;
+      </span>
+    </li>
+    <li>
+      备 注：
+      <textarea name="notes" id="notes" cols="30" rows="10" [(ngModel)]="peopleInfo.notes"></textarea>
+    </li>
   </ul>
   <button (click)="doSubmit()">获取表单内容</button>
 </div>
+
+<!-- 管道使获取到的JSON内容显示出来，否则会显示OBJ OBJ -->
+<pre>{{peopleInfo | json}}</pre>
