@@ -18,6 +18,7 @@ export class TodoListComponent implements OnInit {
   public todolistLen:number = 0;
   public donelistLen:number = 0;
   public todoLists:ListItem[] = [];
+  public itemLists:ListItem[] = [];
   public doneLists:any[] = [];
   public checkStatus:boolean;
 
@@ -33,6 +34,7 @@ export class TodoListComponent implements OnInit {
   submit(){
     console.log(this.taskText);
     this.todoLists.push({
+    // this.itemLists.push({
       taskText: this.taskText,
       checkStatus: false,
       id: uuidv4()
@@ -55,14 +57,25 @@ export class TodoListComponent implements OnInit {
     }
   }
 
-  delete(i){
-    this.todoLists.splice(i,1);
+  delete(keyitem){
+    if (this.todoLists.includes(keyitem)) {
+      this.todoLists.splice(this.todoLists.indexOf(keyitem),1);
     this.todolistLen = this.todoLists.length;
+    }else if (this.doneLists.includes(keyitem)) {
+      this.doneLists.splice(this.doneLists.indexOf(keyitem),1);
+    this.donelistLen = this.doneLists.length;
+    }
+
     // this.donelistLen = this.doneLists.length;
 
   }
   isChecked(e, keyitem){
     // this.checkStatus=e.target.checked;
+/*     if (keyitem.checkStatus === false) {
+      keyitem.checkStatus = true;
+    }else if(keyitem.checkStatus === true) {
+      keyitem.checkStatus = false;
+    } */
 if (keyitem.checkStatus === false) {
   keyitem.checkStatus = true;
   this.todoLists.splice(this.todoLists.indexOf(keyitem),1);
@@ -73,7 +86,7 @@ else if(keyitem.checkStatus === true) {
   this.doneLists.splice(this.doneLists.indexOf(keyitem),1);
 this.todoLists.push(keyitem)
 }
-console.log(this.todoLists);
+console.log(this.itemLists);
 
 
 

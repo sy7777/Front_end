@@ -5,12 +5,12 @@
       <button (click)="submit()">Submit</button>
   </div>
   <div class="doing todo">
-      <h3><span class="title">Doing</span><span class="num" >{{todolistLen}}</span></h3>
+      <h3><span class="title">Doing</span><span class="num" >{{todoLists?.length||0}}</span></h3>
       <div class="list">
           <div class="todoItem" *ngFor="let item of todoLists; let i=index">
               <input type="checkbox" (click)="isChecked($event,item)" >
-              <div class="content" >{{item.taskText}}</div>
-              <div class="del" (click)="delete(i)">DEL</div>
+              <div class="content"  >{{item.taskText}}</div>
+              <div class="del" (click)="delete(item)">DEL</div>
           </div>
       </div>
   </div>
@@ -19,8 +19,8 @@
       <div class="list">
           <div class="todoItem" *ngFor="let doneitem of doneLists; let j=index">
               <input type="checkbox" checked="checked" (click)="isChecked($event,doneitem)">
-              <div class="content">{{doneitem.taskText}}</div>
-              <div class="del" (click)="delete(j)">DEL</div>
+              <div class="content"  >{{doneitem.taskText}}</div>
+              <div class="del" (click)="delete(doneitem)">DEL</div>
           </div>
       </div>
   </div>
