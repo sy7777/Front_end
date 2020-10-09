@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="header">
+      <div class="logo">To Do List</div>
+      <input type="text" [(ngModel)]="taskText"/>
+      <button (click)="submit()">Submit</button>
+  </div>
+  <div class="doing todo">
+      <h3><span class="title">Doing</span><span class="num">0</span></h3>
+      <div class="list">
+          <div class="todoItem">
+              <input type="checkbox">
+              <div class="content" *ngFor="let item of todoLists">{{item}}</div>
+              <div class="del">DEL</div>
+          </div>
+      </div>
+  </div>
+  <div class="done todo">
+      <h3><span class="title">Done</span><span class="num">0</span></h3>
+      <div class="list">
+          <div class="todoItem">
+              <input type="checkbox" checked="checked">
+              <div class="content">今晚吃鱼</div>
+              <div class="del">DEL</div>
+          </div>
+      </div>
+  </div>
+</div>

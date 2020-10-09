@@ -1,0 +1,129 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Rockwell";
+  box-sizing: border-box;
+}
+body{
+  font-size: 16px;
+  margin: 20px auto;
+}
+h3{
+  font-size: 1.8rem;
+}
+.main{
+  width: 100vw;
+ height: 100vh;
+   /* position: relative; */
+  //  margin: 20px auto;
+}
+.header{
+  background: #99CCCC;
+  /* width: 100%; */
+  width: 100vw;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* position: absolute; */
+  button{
+    width: 3.4rem;
+    height: 1.6rem;
+    margin: 0 1.2rem;
+    border-radius: 0.5rem;
+  }
+}
+.header>.logo{
+  font-size: 1.2rem;
+  // width: 1.2rem;
+  height: 0.5rem;
+  text-align: center;
+  line-height: 0.5rem;
+  font-weight: 400;
+}
+.header>input{
+  width: 10rem;
+  height: 1.3rem;
+  margin: 0 1.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  /* 侧轴居中，在父级元素设置alignitem：center */
+  padding: 0 0.1rem;
+}
+.todo h3{
+  // height: 0.6rem;
+  // line-height: 0.6rem;
+  display: flex;
+  /* 靠近两边边距 水平分布*/
+  justify-content: space-around;
+  /* 上下居中 */
+  align-items: center;
+  padding: 0 0.15rem;
+}
+.doing{
+  background: #FFCC99;
+  /* box-sizing: content-box; */
+  margin: 0;
+  padding-bottom: 0.1rem;
+  min-height: 45%;
+}
+.list{
+  padding: 0 0.15rem;
+  //display: flex;
+
+
+}
+.todoItem{
+  display: flex;
+  // flex-direction: row;
+  width: 100vw;
+  height: 2.2rem;
+  line-height:2.2rem;
+  // font-size: 0.14rem;
+  align-items: center;
+  background: lightcyan;
+  border-radius: 0.05rem;
+  overflow: hidden;
+  // justify-content: space-around;
+  margin-bottom: 0.1rem;
+}
+.todoItem::before{
+  width: 0.4rem;
+  height: 1.32rem;
+  background: darkgreen;
+  content: "";
+}
+.todoItem>input{
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0.4rem;
+}
+.todoItem .content{
+  width: 80vw;
+}
+.todoItem .del{
+  background: #CCCCFF;
+  width: 3.4rem;
+  text-align: center;
+  border-radius: 0.7rem;
+  margin-right: 4.5rem;
+  // margin-right: 0;
+}
+.done{
+  background: #FFCCCC;
+  bottom: 0;
+  padding-bottom: 0.1rem;
+  min-height: 45%;
+}
+.done.todo .todoItem{
+  opacity: 0.7;
+}
+
+.pc{
+  font-size: 200px !important;
+
+}
+.pc .main{
+  margin: 0 auto;
+}
