@@ -1,0 +1,7 @@
+<div class="main">
+  <input type="text" [(ngModel)]="searchText">
+  <button (click)="search()">search</button>
+
+  <hr>
+  <div>History: <span  *ngFor="let item of hisList;let i=index">{{item}} <button (click)="delete(i)">x</button></span></div>
+</div>
