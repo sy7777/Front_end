@@ -28,8 +28,13 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
 
+
+  }
+  // HTML加载完成，可以获取所有DOM元素。
+  ngAfterViewInit(){
+
+  }
   run(){
     alert("这是一个自定义方法");
   }

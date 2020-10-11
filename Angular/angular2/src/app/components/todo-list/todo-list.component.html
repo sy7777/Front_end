@@ -15,7 +15,7 @@
       </div>
   </div>
   <div class="done todo">
-      <h3><span class="title">Done</span><span class="num">{{donelistLen}}</span></h3>
+      <h3><span class="title">Done</span><span class="num">{{doneLists?.length||0}}</span></h3>
       <div class="list">
           <div class="todoItem" *ngFor="let doneitem of doneLists; let j=index">
               <input type="checkbox" checked="checked" (click)="isChecked($event,doneitem)">

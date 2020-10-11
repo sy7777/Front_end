@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-search',
@@ -10,7 +11,10 @@ export class SearchComponent implements OnInit {
 
   public searchText:string;
   public hisList: any[]=[];
-  constructor() { }
+  constructor(public storage: StorageService) {
+    // console.log(this.storage.get());
+
+  }
 
   ngOnInit(): void {
   }

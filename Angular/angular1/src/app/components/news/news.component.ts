@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-news',
@@ -33,12 +33,18 @@ private 私有，只有这个类可以访问
     username:"王五",
     age: 25
   }]
-
+  @ViewChild("myBox")
+  ele:ElementRef;
   constructor() {
     this.message = "这是给属性赋值，也叫改变属性的值"
   }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
+    console.log(this.ele.nativeElement);
+
   }
 
 }
