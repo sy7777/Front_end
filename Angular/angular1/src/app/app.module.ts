@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 /* 这个文件是angular根模块，告诉angular如何组装应用 */
 
@@ -22,7 +22,8 @@ import { TransitionComponent } from './components/transition/transition.componen
   imports: [  //配置当前项目运行依赖的其他模块
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientJsonpModule
   ],
   providers: [],  //配置当前项目所需的服务
   bootstrap: [AppComponent]

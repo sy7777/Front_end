@@ -64,4 +64,16 @@ export class TransitionComponent implements OnInit {
 
     })
   }
+
+  getJsonp(){
+    /*
+    'http://a.itying.com/api/productlist?callback=xxx';
+    'http://a.itying.com/api/productlist?cb=xxx';cb || callback与下面的参数对应
+    */
+    const api ='http://a.itying.com/api/productlist';
+    this.http.jsonp(api,"callback").subscribe(res=>{
+      console.log(res);
+
+    })
+  }
 }
