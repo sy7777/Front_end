@@ -1,0 +1,17 @@
+.header{
+  height: 44px;
+  line-height: 44px;
+  background: #000;
+  color: #fff;
+
+  // SCSS可以这样写
+  a{
+    color: #fff;
+    padding: 40px;
+  }
+  .active{
+    // height: 24px;
+    // background-color: grey;
+    color: hotpink;
+  }
+}
