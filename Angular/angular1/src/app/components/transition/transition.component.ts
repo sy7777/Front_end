@@ -1,8 +1,9 @@
+import { HttpserviceService } from './../../../../../../../angular/src/app/services/httpservice.service';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
 // 当做一个服务
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, PipeTransform } from '@angular/core';
-// import{HttpClient} from '@angular/common/http'
+
 @Component({
   selector: 'app-transition',
   templateUrl: './transition.component.html',
@@ -11,7 +12,7 @@ import { Component, OnInit, PipeTransform } from '@angular/core';
 export class TransitionComponent implements OnInit {
 
   public lists: any[];
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient, public httpService:HttpserviceService) { }
 
   ngOnInit(): void {
   }
@@ -76,4 +77,12 @@ export class TransitionComponent implements OnInit {
 
     })
   }
+
+/*   getAxios(){
+    const api ='http://a.itying.com/api/productlist';
+    this.httpService.axiosGet(api).then((data)=>{
+      console.log(data);
+
+    })
+  } */
 }

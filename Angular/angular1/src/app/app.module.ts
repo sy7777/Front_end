@@ -1,3 +1,4 @@
+import { HttpserviceService } from './../../../../../angular/src/app/services/httpservice.service';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 /* 这个文件是angular根模块，告诉angular如何组装应用 */
@@ -23,7 +24,8 @@ import { TransitionComponent } from './components/transition/transition.componen
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    HttpserviceService
   ],
   providers: [],  //配置当前项目所需的服务
   bootstrap: [AppComponent]
