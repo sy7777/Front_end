@@ -3,7 +3,10 @@
 </div>
 <button (click)="showAside()">弹出侧边栏</button>
 <!-- <button (click)="hideAside()">隐藏侧边栏</button> -->
+<button (click)="getData()">get数据请求</button>
+<div *ngFor="let item of lists">{{item.title}}</div>
 
+<button (click)="doLogin()">post请求数据</button>
 <aside id="aside">
 这是一个侧边栏
 </aside>

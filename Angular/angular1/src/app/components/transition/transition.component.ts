@@ -1,5 +1,8 @@
+import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+// 当做一个服务
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, PipeTransform } from '@angular/core';
-
+// import{HttpClient} from '@angular/common/http'
 @Component({
   selector: 'app-transition',
   templateUrl: './transition.component.html',
@@ -7,7 +10,8 @@ import { Component, OnInit, PipeTransform } from '@angular/core';
 })
 export class TransitionComponent implements OnInit {
 
-  constructor() { }
+  public lists: any[];
+  constructor(public http:HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -40,4 +44,24 @@ export class TransitionComponent implements OnInit {
     var asideDom:any = document.querySelector("#aside");
     asideDom.style.transform = "translate(100%,0)"
   } */
+
+
+  getData(){
+    // alert("数据请求")
+    let api='http://a.itying.com/api/productlist';
+    // rxjs
+    this.http.get(api).subscribe((res:any)=>{
+      console.log(res);
+      this.lists = res.result;
+    });
+  }
+
+  doLogin(){
+    const httpOptions = {headers:new HttpHeaders({'Content-Type': 'application/json'})};
+    const api ='http://a.itying.com/api/productlist';
+    this.http.post(api,{"pid":"0","title":"精选热菜"},httpOptions).subscribe((res)=>{
+      console.log(res);
+
+    })
+  }
 }
