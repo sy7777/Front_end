@@ -1,6 +1,17 @@
-<p>product works!</p>
-<a [routerLink]="[ '/productcontent', '2312' ]">跳转到商品详情</a>
-<button (click)="goRouter()">JS跳转路由</button>
-<br>
+<div class="content">
+  <div class="left">
+    <!-- <a href="#">商品分类</a> -->
+    <a [routerLink]="[ '/product/pcate']" routerLinkActive="active">商品分类</a>
+    <br>
+    <!-- <a href="#">产品列表</a> -->
+    <a [routerLink]="[ '/product/plist']" routerLinkActive="active">产品列表</a>
+  </div>
+  <div class="right">
+    <router-outlet></router-outlet>
+    <a [routerLink]="[ '/productcontent', '2312' ]">跳转到商品详情</a>
+    <button (click)="goRouter()">JS跳转路由</button>
+    <br>
 
-<button (click)="goNews()">get传值跳转路由</button>
+    <button (click)="goNews()">get传值跳转路由</button>
+  </div>
+</div>
