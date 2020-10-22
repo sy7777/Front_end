@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewUppercasePipe } from './pipes/new-uppercase.pipe';
 import { ChildComponent } from './view/child/child.component';
+import { MystyleDirective } from './directives/mystyle.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewUppercasePipe,
-    ChildComponent
+    ChildComponent,
+    MystyleDirective
   ],
   imports: [
     BrowserModule,

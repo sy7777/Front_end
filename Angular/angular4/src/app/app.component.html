@@ -1,3 +1,5 @@
+{{title}}
+<h1 [appMystyle]="abc">指令</h1>
 <!-- 自定义管道 -->
 <h1>{{msg | uppercase}}</h1>
 <h1>{{msg | newUppercase:"元"}}</h1>
@@ -6,4 +8,5 @@
 <!-- 这里的命名要和子组件@Input()名字一样 -->
 <app-child [showItem]= "sendChildMsg" (childrenMsg)="get($event)"></app-child>
 <h1>子组件发来的信息：{{getChildMsg}}</h1>
+
 
