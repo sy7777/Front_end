@@ -1,0 +1,1290 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+	<!-- Basic Page Needs
+================================================== -->
+	<title>:: Yuqi Portfolio :></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas 
+================================================== -->
+	<meta content="width=device-width,initial-scale=1" name="viewport">
+
+	<!-- Favicons
+================================================== -->
+	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+	<link rel="icon" type="image/x-icon" href="icon.ico">
+	<!--fonts
+====================================================-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700%7cOswald:400,700" rel="stylesheet">
+	<!--stylesheets
+====================================================-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/simpletextrotator.css">
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+	<script src="js/jquery.min.js"></script> <!-- JQUERY -->
+	<script src="./js/hideDisplay.js" defer></script>
+</head>
+
+<body>
+
+	<!--FRONT PAGE/ SPLASH SCREEN SECTION-->
+
+	<div class="loading-screen"></div>
+
+	<div id="frontpage">
+		<div class="shadow-img"></div>
+		<img src="images/front-image.jpg" class="front-img img-responsive" alt="Front-image">
+		<!--IMAGE FOR FRONT SCREEN-->
+		<h1>Yuqi <span class="invert">Sui</span></h1>
+		<!--PROFILE NAME-->
+		<h3 class="invert" style="margin-top: -10px; margin-bottom: 10px;">Web/UI <span class="rotate">Developer,
+				Designer</span></h3>
+		<!--SUBTITLE IN PROFILE-->
+		<div class="frontclick"><img src="images/click.png" alt="" class="img-responsive"><span class="pulse"></span>
+		</div>
+	</div>
+	<!--FRONT PAGE/ SPLASH SCREEN SECTION ENDS-->
+	<!--container-->
+	<div class="container">
+		<div id="content" class="row hidden">
+			<div class="col-sm-4">
+				<!--namecard-->
+				<div id="namecard" class="namecard">
+					<div class="shadow-img"></div>
+					<h1 class="maintitle">Yuqi <span class="invert">Sui</span></h1>
+					<!--PROFILE NAME-->
+					<h3 class="invert sub-maintitle">Web/UI
+						<span class="rotate">Developer,Designer</span>
+						<!--SUBTITLE AFTET NAME-->
+					</h3>
+					<img id="profile-img" class="profile-img transparent" src="images/myPhoto.png" alt="profile-image">
+					<!--PROFILE IMAGE-->
+				</div>
+				<!--/#namecard-->
+				<!--menu-->
+				<div id="menu-container">
+					<!--PAGE MENU-->
+					<ul class="nav-menu no-padding">
+						<li class="nav-btn selected" title="Home" data-page="home">
+							<div class="hover-background"></div>
+							<span>About Me</span><i class="fa fa-user fa-fw"></i>
+						</li>
+						<li class="nav-btn" id="resume-btn" title="Resume" data-page="resume">
+							<div class="hover-background"></div>
+							<span>Resume</span><i class="fa fa-file-text fa-fw"></i>
+						</li>
+						<li class="nav-btn folio-btn" data-filter="*" title="Portfolio" data-page="portfolio">
+							<div class="hover-background"></div>
+							<span onclick="hide()">Portfolio</span><i class="fa fa-suitcase fa-fw"></i>
+						</li>
+						<li class="nav-btn" title="Contact" id="contact-link" data-page="contact">
+							<div class="hover-background"></div>
+							<span>Contact</span><i class="fa fa-paper-plane fa-fw"></i>
+						</li>
+					</ul>
+					<!--/.nav-menu __PAGE MENU ENDS-->
+
+					<!--SOCIAL NAV MENU-->
+					<div class="social-menu-container">
+						<ul class="social-menu no-padding">
+
+							<li><a target="_blank" href="https://github.com/sy7777"><i class="fa fa-github"></i></a></li>
+							<li><a target="_blank" href="https://www.linkedin.com/in/yuqisui"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>
+					<!--/.social-menu-container-->
+				</div>
+				<!--#menu-container-->
+			</div>
+			<div class="col-sm-8 page-segment">
+				<ul class="page-container no-padding">
+					<!--HOME/PROFILE PAGE-->
+					<li id="home" class="selected">
+						<div class="title-container hidden">
+							<div class="shadow-img"></div>
+							<h2 class="rotate-out">Welcome To <span class="invert">My Profile</span></h2>
+							<!--HOME TITLE-->
+						</div>
+						<div class="description hidden">
+							<!-- person img -->
+							<!-- <div class="watermark-home"></div> -->
+
+							<div class="fade-text transparent">
+								<!--DESCRIPTION ON HOME-->
+								<div class="strong-text">Hello, I am <span>Yuqi Sui</span></div>
+								<div class="focus-text"><span>Web Developer & </span><span>Web Designer</span></div>
+								<p class="large-paragraph">Seeking to a job relevant to front-end Web Designer/Developer
+									or UI/UX Designer
+									with skills in web development and experience in graphic design. Effective project
+									management,
+									problem-solver with leadership skills, a good team member and a hardworking
+									mentality. </p>
+								<!--DESCRIPTION ON HOME ENDS-->
+							</div>
+
+							<!--ALL PERSONAL DETAILS-->
+							<h3 class="personal-info-title title">Personal Info</h3>
+							<ul class="personal-info">
+								<li class="rotate-out rotated"><label>Name:</label><span>Yuqi Sui</span></li>
+								<li class="rotate-out rotated"><label>Address:</label><span>8 Holden St, Woolloongabba,
+										Brisabne</span></li>
+								<li class="rotate-out rotated">
+									<label>Email:</label><span id="my-email">yuqi.sui77@gmail.com</span></li>
+								<li class="rotate-out rotated"><label>Phone:</label><span>+61 415 590 320</span></li>
+							</ul>
+							<!--/ul.personal-info-->
+						</div>
+					</li>
+					<!--/#home-->
+
+					<!--RESUME PAGE-->
+					<li id="resume" class="hidden">
+						<div class="title-container">
+							<div class="shadow-img"></div>
+							<h2 class="rotate-out rotated"><span class="invert">Resume Of</span> Yuqi Sui</h2>
+							<!--RESUME TITLE-->
+						</div>
+						<div class="description">
+
+							<div class='tabs tabs_animate'>
+								<!--RESUME TAB LISTS-->
+								<ul class='horizontal no-padding'>
+									<li><a href="#tab-1" class="icon-bg icon-skills">
+											<div>Skills</div>
+										</a></li>
+									<li><a href="#tab-2" class="icon-bg icon-education">
+											<div>Educations</div>
+										</a></li>
+									<li><a href="#tab-3" class="icon-bg icon-employment">
+											<div>Employment</div>
+										</a></li>
+								</ul>
+								<!--RESUME TAB LISTS ENDS-->
+
+								<!--RESUME FIRST TAB/SKILL TAB DETAILS-->
+								<div id='tab-1'>
+									<h3 class="title">MY SKILLS</h3>
+									<!--SKILLS WITH BAR DISPLAY-->
+									<ul class="skills-list no-padding">
+										<li class="row">
+											<div class="col-xs-2">
+												<div class="fw-mid">HTML</div>
+											</div>
+											<div class="col-xs-9">
+												<div class="bar">
+													<div class="percentage" id="bar1" style="width: 90%;"></div>
+												</div>
+											</div>
+										</li>
+										<li class="row">
+											<div class="col-xs-2">
+												<div class="fw-mid">CSS</div>
+											</div>
+											<div class="col-xs-9">
+												<div class="bar">
+													<div class="percentage" id="bar2" style="width: 90%;"></div>
+												</div>
+											</div>
+										</li>
+										<li class="row">
+											<div class="col-xs-2">
+												<div class="fw-mid">Javascript</div>
+											</div>
+											<div class="col-xs-9">
+												<div class="bar">
+													<div class="percentage" id="bar3" style="width: 85%;"></div>
+												</div>
+											</div>
+										</li>
+										<li class="row">
+											<div class="col-xs-2">
+												<div class="fw-mid">Angular</div>
+											</div>
+											<div class="col-xs-9">
+												<div class="bar">
+													<div class="percentage" id="bar4" style="width: 75%;"></div>
+												</div>
+											</div>
+										</li>
+										<li class="row">
+											<div class="col-xs-2">
+												<div class="fw-mid">PHP</div>
+											</div>
+											<div class="col-xs-9">
+												<div class="bar">
+													<div class="percentage" id="bar5" style="width: 55%;"></div>
+												</div>
+											</div>
+										</li>
+										<li class="row">
+											<div class="col-xs-2">
+												<div class="fw-mid">Photoshop</div>
+											</div>
+											<div class="col-xs-9">
+												<div class="bar">
+													<div class="percentage" id="bar6" style="width: 80%;"></div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<!--SKILLS WITH BAR DISPLAY ENDS-->
+
+									<!--SKILLS WITH CIRCLE DISPLAY-->
+									<div class="circle-skill-container">
+										<h3 class="title">OTHER SKILLS</h3>
+										<div class="row">
+											<div class="col-xs-4 center-align">
+												<div class="circle-bar" id="line-container1">
+													<div class="progressbar-text" id="progress-text1">80</div>
+												</div>
+												<h5>WordPress</h5>
+											</div>
+											<div class="col-xs-4 center-align">
+												<div class="circle-bar" id="line-container2">
+													<div class="progressbar-text" id="progress-text2">70</div>
+												</div>
+												<h5>Shopify</h5>
+											</div>
+											<div class="col-xs-4 center-align">
+												<div class="circle-bar" id="line-container3">
+													<div class="progressbar-text" id="progress-text3">60</div>
+												</div>
+												<h5>Node.js</h5>
+											</div>
+											<div class="col-xs-4 center-align">
+												<div class="circle-bar" id="line-container4">
+													<div class="progressbar-text" id="progress-text4">80</div>
+												</div>
+												<h5>Office</h5>
+											</div>
+											<div class="col-xs-4 center-align">
+												<div class="circle-bar" id="line-container5">
+													<div class="progressbar-text" id="progress-text5">90</div>
+												</div>
+												<h5>Self-Motivation</h5>
+											</div>
+											<div class="col-xs-4 center-align">
+												<div class="circle-bar" id="line-container6">
+													<div class="progressbar-text" id="progress-text6">80</div>
+												</div>
+												<h5>Quick-Learning</h5>
+											</div>
+
+										</div>
+									</div>
+									<!--SKILLS WITH CIRCLE DISPLAY ENDS-->
+								</div>
+								<!--RESUME FIRST TAB/SKILL TAB DETAILS ENDS-->
+
+								<!--RESUME SECOND TAB/EDUCATION TAB DETAILS-->
+								<div id='tab-2'>
+									<h3 class="title">EDUCATIONS</h3>
+									<ul class="education-class">
+										<li>
+											<!--EDUCATION LIST ITEM-->
+											<h4 class="title">Education Centre of Australia<i class="fa fa-sort-desc pull-right"></i></h4>
+											<div class="list-content">
+												<h5 class="title">Professional Year <span class="list-year">(2019.1 -
+														2019.12)</span></h5>
+												<p>Learn the culture of Australian workforce from internal class and internship.</p>
+												<!--EDUCATION LIST DETAILS-->
+											</div>
+										</li>
+										<li>
+											<!--EDUCATION LIST ITEM-->
+											<h4 class="title">University of Queensland<i class="fa fa-sort-desc pull-right"></i></h4>
+											<div class="list-content current">
+												<h5 class="title">Master of Information Technology <span class="list-year">(2017.2 -
+														2018.12)</span></h5>
+												<p>Got DI on Python, Information System, Relational Database, Design computing, Interactive Web
+													Design</p>
+												<!--EDUCATION LIST DETAILS-->
+											</div>
+										</li>
+										<li>
+											<!--EDUCATION LIST ITEM-->
+											<h4 class="title">SIIT Institution<i class="fa fa-sort-desc pull-right"></i></h4>
+											<div class="list-content">
+												<h5 class="title">Naati Certification<span class="list-year">(2017 -
+														2018)</span></h5>
+												<p>The certification of translator from English to Mandarin</p>
+												<!--EDUCATION LIST DETAILS-->
+											</div>
+										</li>
+										<li>
+											<!--EDUCATION LIST ITEM-->
+											<h4 class="title">Sichuan Agricultural University<i class="fa fa-sort-desc pull-right"></i></h4>
+											<div class="list-content">
+												<h5 class="title">Bachelor of Agribusiness <span class="list-year">(2012 -
+														2016)</span></h5>
+												<p>GPA 3.35/4</p>
+												<!--EDUCATION LIST DETAILS-->
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--RESUME SECOND TAB/EDUCATION TAB DETAILS ENDS-->
+								<!--RESUME THIRD TAB/EMPLYMENT TAB DETAILS ENDS-->
+								<div id='tab-3'>
+									<h3 class="title">EMPLOYMENT</h3>
+									<ul class="employment-class tab-cont">
+										<li>
+											<!--EMPLOYMENT INDIVIDUAL LIST-->
+											<h4>Web Designer/Graphic Designer <span class="year">2019.9 - 2020.6</span></h4>
+											<h5>Whale Lab Pty Ltd</h5>
+											<p>Do some graphic designs for the website of the company by communicational, professional skilld
+												and team works.</p>
+											<!--EMPLOYMENT LIST DETAILS-->
+										</li>
+										<li>
+											<!--EMPLOYMENT INDIVIDUAL LIST-->
+											<h4>Web Developer and Social Media Content Editor <span class="year">2019.6 - 2019.11</span></h4>
+											<h5>AUG Global Network</h5>
+											<p>Edit the media content and
+												develop the Chinese website.</p>
+											<!--EMPLOYMENT LIST DETAILS-->
+										</li>
+										<li>
+											<!--EMPLOYMENT INDIVIDUAL LIST-->
+											<h4>Manager <span class="year">2018 - 2019</span></h4>
+											<h5>Breadtop</h5>
+											<p>Do the graphic design for the shop, communicate with customers and
+												offer services, handle daily issues.</p>
+											<!--EMPLOYMENT LIST DETAILS-->
+										</li>
+										<li>
+											<!--EMPLOYMENT INDIVIDUAL LIST-->
+											<h4>Math Teacher <span class="year">2016</span></h4>
+											<h5>JingRui Educational Institution</h5>
+											<p>1V1 mathematic tutorial for the primary and junior school students.</p>
+											<!--EMPLOYMENT LIST DETAILS-->
+										</li>
+									</ul>
+								</div>
+								<!--RESUME THIRD TAB/EMPLYMENT TAB DETAILS ENDS-->
+							</div>
+						</div>
+					</li>
+					<!--/#resume-->
+					<!--PORTFOLIO PAGE-->
+					<li id="portfolio" class="hidden">
+						<div class="title-container">
+							<div class="shadow-img"></div>
+							<h2 class="rotate-out rotated">Portfolio</h2>
+							<!--PORTFOLIO TITLE-->
+						</div>
+
+						<!--PORTFOLIO CATEGORY LIST-->
+						<div class="abs-child">
+							<ul class="button-group filters-button-group">
+								<li class="button is-checked" data-filter="*" onclick="hide()">Graphic Designs</li>
+								<li class="button" data-filter=".photography" onclick="displayWeb()">Website Projects</li>
+								<li class="button" data-filter=".commercial" onclick="displayCV()">Download My Resume</li>
+								<!-- <li class="button" data-filter=".potrait">Potrait</li> -->
+							</ul>
+							<!--/.button-group filters-button-group-->
+						</div>
+
+						<div class="sec-porfolio description">
+							<div class="row">
+								<!--PORTFOLIO ITEM CONTAINER-->
+								<div class="folio-container">
+									<ul class="folio-item">
+										<!--PORTFOLIO INDIVIDAUAL ITEM-->
+										<li class="view view-first">
+											<img src="images/folio/4.jpg" alt="4" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Design Work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<!-- Button trigger modal -->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModa4">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-second ">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/8.jpg" alt="8" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask"></div>
+											<div class="content">
+												<!-- <h2>Hover Style #2</h2> -->
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal8">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-tenth ">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/3.jpg" alt="3" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal3">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-second ">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/1.jpg" alt="1" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask"></div>
+											<div class="content">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal1">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+
+										<li class="view view-first potrait">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/5.jpg" alt="5" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Design work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal5">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-second">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/6.jpg" alt="6" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask"></div>
+											<div class="content">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal6">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-tenth potrait">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/7.jpg" alt="7" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal7">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+
+										<li class="view view-tenth ">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/2.jpg" alt="2" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal2">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+
+										<li class="view view-second ">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/9.jpg" alt="9" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask"></div>
+											<div class="content">
+												<!-- <h2>Hover Style #2</h2> -->
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal9">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-tenth ">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/10.jpg" alt="10" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal10">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-second">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/11.jpg" alt="11" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask"></div>
+											<div class="content">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal11">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+
+										<li class="view view-first potrait">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/12.jpg" alt="12" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Design work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal12">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-second ">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/13.jpg" alt="13" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask"></div>
+											<div class="content">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal13">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-tenth potrait">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/14.jpg" alt="14" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal14">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+										<li class="view view-second ">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/15.jpg" alt="15" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask"></div>
+											<div class="content">
+												<h2>Design work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModal15">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+
+
+
+									</ul>
+									<!-- website container -->
+									<ul class="folio-item">
+										<!--PORTFOLIO INDIVIDAUAL ITEM-->
+										<li class="view view-first photography" id="web1">
+											<img src="images/folio/web1.PNG" alt="1" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<!-- Button trigger modal -->
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb1">Read More</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+
+											</div>
+										</li>
+										<li class="view view-first photography" id="web2">
+											<img src="images/folio/web2.PNG" alt="2" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb2">Read More</a>
+										</li>
+
+										<li class="view view-first photography" id="web3">
+											<img src="images/folio/web3.PNG" alt="3" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb3">Read More</a>
+											</div>
+										</li>
+
+										<li class="view view-first photography" id="web4">
+											<img src="images/folio/web4.PNG" alt="4" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb4">Read More</a>
+											</div>
+										</li>
+										<li class="view view-first photography" id="web5">
+											<img src="images/folio/web5.png" alt="5" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb5">Read More</a>
+											</div>
+										</li>
+										<li class="view view-first photography" id="web6">
+											<img src="images/folio/web6.png" alt="4" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb6">Read More</a>
+											</div>
+										</li>
+										<li class="view view-first photography" id="web7">
+											<img src="images/folio/web7.png" alt="7" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb7">Read More</a>
+											</div>
+										</li>
+										<li class="view view-first photography" id="web8">
+											<img src="images/folio/web8.png" alt="8" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb8">Read More</a>
+											</div>
+										</li>
+										<li class="view view-first photography" id="web9">
+											<img src="images/folio/web9.png" alt="9" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask">
+												<h2>Website Work</h2>
+												<a role="button" class="info" data-toggle="modal" data-target="#myModalweb9">Read More</a>
+											</div>
+										</li>
+
+										<li class="view view-second commercial" id="my-resume">
+											<!--PORTFOLIO INDIVIDAUAL ITEM-->
+											<img src="images/folio/resume.jpg" alt="11" />
+											<!--PORTFOLIO INDIVIDAUAL ITEM IMAGE-->
+											<div class="mask"></div>
+											<div class="content">
+												<h2>Know Me More</h2>
+												<!--PORTFOLIO INDIVIDAUAL ITEM TITLE-->
+												<a role="button" class="info" target="_blank" href="resume.pdf">Download</a>
+												<!--PORTFOLIO INDIVIDAUAL ITEM MODAL LINK BY 'data-target'-->
+											</div>
+										</li>
+									</ul>
+
+								</div>
+
+								<!--PORTFOLIO ITEM CONTAINER ENDS-->
+							</div>
+						</div>
+					</li>
+					<!--/#portfolio-->
+
+					<!--CONTACT PAGE-->
+					<li id="contact" class="hidden">
+						<div class="title-container">
+							<div class="shadow-img"></div>
+							<h2 class="rotate-out rotated">Contact</h2>
+							<!--CONTACT PAGE TITLE-->
+						</div>
+						<div class="description">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="map-container">
+										<div style="width: 100%"><iframe width="100%" height="500"
+												src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=8%20Holden%20St%2C%20woolloongabba+(My%20Home)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+												frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a
+													href="https://www.maps.ie/map-my-route/">Create a route on google maps</a></iframe></div>
+										<br />
+
+									</div>
+
+									<div class="col-sm-5">
+										<!--CONTACT DESCRIPTION-->
+										<h3 class="title">Contact Info</h3>
+										<h6 class="sm-title"><span class="address-icon"><i class="fa fa-map-marker"></i></span>8, Holden St,
+											Woolloongabba</h6>
+										<h6 class="sm-title"><span class="address-icon"><i class="fa fa-phone"></i></span>+61 415 590 320
+										</h6>
+										<h6 class="sm-title"><span class="address-icon"><i
+													class="fa fa-envelope"></i></span>yuqi.sui77@gmail.com
+										</h6>
+										<!--/CONTACT DESCRIPTION ENDS-->
+									</div>
+									<div class="col-sm-7">
+
+										<div class="mail-container">
+
+											<h3 class="title invert">Don't Forget To Mail Me</h3>
+											<!--CONTACT FORM-->
+
+											<div class="form-group">
+												<button type="button" class="btn btn-success"><a href="mailto:yuqi.sui77@gmail.com">SEND</a>
+											</div>
+
+											</form>
+											<!--/#contact-form-->
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+					</li>
+					<!--/#contact-->
+				</ul>
+
+				<div class="row mobile-nav-container">
+					<!--SOCIAL NAV FOR MOBILE-->
+					<ul class="mobile-social no-padding">
+						<li>Connect With Me</li>
+
+
+						<li><a href="https://github.com/sy7777"><i class="fa fa-github"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/yuqisui/"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+					<!--/.mobile-social-->
+				</div>
+			</div>
+			<!--/.page-segment -->
+			<!--  <h6 class="copyright-text">Copyright © 2015 John Doe</h6> -->
+			<!--if anyone wants copyright Texts-->
+		</div>
+	</div>
+
+	<!--PORTFOLIO IMAGE MODAL LIST-->
+	<div class="modal fade" id="myModa4" tabindex="-1" role="dialog" aria-labelledby="myModalLabe4" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabe4">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE 1-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/4.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel8" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel8">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE 2-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/8.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel3">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE 3 -->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/3.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel1">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/1.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel5">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/5.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel6" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel6">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/6.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel7" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel7">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/7.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel2">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/2.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel9" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabe9">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/9.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel10"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel10">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/10.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal11" tabindex="-1" role="dialog" aria-labelledby="myModalLabel11"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel11">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/11.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal12" tabindex="-1" role="dialog" aria-labelledby="myModalLabel12"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel12">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/12.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal13" tabindex="-1" role="dialog" aria-labelledby="myModalLabel13"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel13">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/13.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal14" tabindex="-1" role="dialog" aria-labelledby="myModalLabel14"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel14">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/14.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModal15" tabindex="-1" role="dialog" aria-labelledby="myModalLabel15"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel5">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/15.jpg" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModalweb1" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb1"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabelweb1">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE 2-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/web1.PNG" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+				<div class="modal-footer">
+					<div class="mf-content">
+						<ul>
+							A basic website for PY students to run their star-up company.
+							<li>Basic Front-End development</li>
+							<li>Link: <a target="_blank" href="https://yuqisui.bitbucket.io/alladin/ ">Demo</a></li>
+						</ul>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div class="modal fade" id="myModalweb2" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb2"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabelweb2">Design Works</h4>
+					<!--PORTFOLIO IMAGE TITLE 2-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/web2_2.PNG" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+				<div class="modal-footer">
+					<div class="mf-content">
+						<ul>
+							People from all over the world can upload their pictures and chat with other online
+							<li>Basic PHP and HTML, all the data were stored in phpMyAdmin. </li>
+							<li>Link: <a target="_blank"
+									href="https://github.com/sy7777/projects/tree/master/php_project/infs7202">Demo Code</a></li>
+						</ul>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+
+	<div class="modal fade" id="myModalweb3" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb3"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+							aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabelweb3">Web Works</h4>
+					<!--PORTFOLIO IMAGE TITLE 2-->
+				</div>
+				<div class="modal-body">
+					<img src="images/folio/web3_2.PNG" class="img-responsive" alt="modal-image">
+					<!--PORTFOLIO MODAL IMAGE-->
+				</div>
+				<div class="modal-footer">
+					<div class="mf-content">
+						<ul>
+							A display page of Github for all ITers who can search information by users and repository.
+							<li>Angular framework </li>
+							<li><a target="_blank" href="https://github.com/sy7777/angular">Demo Code</a></li>
+						</ul>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+		<div class="modal fade" id="myModalweb4" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb4"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabelweb4">Design Works</h4>
+						<!--PORTFOLIO IMAGE TITLE 2-->
+					</div>
+					<div class="modal-body">
+						<img src="images/folio/web4_2.PNG" class="img-responsive" alt="modal-image">
+						<!--PORTFOLIO MODAL IMAGE-->
+					</div>
+					<div class="modal-footer">
+						<div class="mf-content">
+							<ul>
+								Your personal bookkeeper, record all your transcation details.
+								<li>Angular and HTML, all the data were stored in Localstorage. </li>
+								<li>Link: <a target="_blank"
+										href="https://github.com/sy7777/ng-account">Demo Code</a></li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div class="modal fade" id="myModalweb5" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb5"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabelweb5">Design Works</h4>
+						<!--PORTFOLIO IMAGE TITLE 2-->
+					</div>
+					<div class="modal-body">
+						<img src="images/folio/web5.png" class="img-responsive" alt="modal-image">
+						<!--PORTFOLIO MODAL IMAGE-->
+					</div>
+					<div class="modal-footer">
+						<div class="mf-content">
+							<ul>
+								Movie Searcher for the movie Lover with different categories.
+								<li>HTML, Api from Douban Movie. </li>
+								<li>Link: <a target="_blank"
+										href="https://yuqisui.bitbucket.io/search_movie/">Demo</a></li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div class="modal fade" id="myModalweb6" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb6"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabelweb6">Design Works</h4>
+						<!--PORTFOLIO IMAGE TITLE 2-->
+					</div>
+					<div class="modal-body">
+						<img src="images/folio/web6.png" class="img-responsive" alt="modal-image">
+						<!--PORTFOLIO MODAL IMAGE-->
+					</div>
+					<div class="modal-footer">
+						<div class="mf-content">
+							<ul>
+								Your personal to do list, record all your tasks.
+								<li>JavaScript, all the data were stored in Localstorage. </li>
+								<li>Link: <a target="_blank"
+										href="https://yuqisui.bitbucket.io/todolist">Demo</a></li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div class="modal fade" id="myModalweb7" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb7"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabelweb7">Design Works</h4>
+						<!--PORTFOLIO IMAGE TITLE 2-->
+					</div>
+					<div class="modal-body">
+						<img src="images/folio/web7.png" class="img-responsive" alt="modal-image">
+						<!--PORTFOLIO MODAL IMAGE-->
+					</div>
+					<div class="modal-footer">
+						<div class="mf-content">
+							<ul>
+								Classical Snake Game.
+								<li>Bring you to the childhood </li>
+								<li>Link: <a target="_blank"
+										href="https://yuqisui.bitbucket.io/Snake">Play</a></li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div class="modal fade" id="myModalweb8" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb8"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabelweb8">Design Works</h4>
+						<!--PORTFOLIO IMAGE TITLE 2-->
+					</div>
+					<div class="modal-body">
+						<img src="images/folio/web8.png" class="img-responsive" alt="modal-image">
+						<!--PORTFOLIO MODAL IMAGE-->
+					</div>
+					<div class="modal-footer">
+						<div class="mf-content">
+							<ul>
+								The Official website of AUG in Chinese.
+								<li>Made by Wordpress. </li>
+								<li>Link: <a target="_blank"
+										href="https://zh-cn.augstudy.com/australia/">Link</a></li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+		<div class="modal fade" id="myModalweb9" tabindex="-1" role="dialog" aria-labelledby="myModalLabelweb9"
+			aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+								aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabelweb9">Design Works</h4>
+						<!--PORTFOLIO IMAGE TITLE 2-->
+					</div>
+					<div class="modal-body">
+						<img src="images/folio/web9.png" class="img-responsive" alt="modal-image">
+						<!--PORTFOLIO MODAL IMAGE-->
+					</div>
+					<div class="modal-footer">
+						<div class="mf-content">
+							<ul>
+								E-commerce of the Whale Lab
+								<li>Made by Wordpress. </li>
+								<li>Link: <a target="_blank"
+										href="https://www.whalelabs.com.au/product/australian-bee-venom-collector/?v=6cc98ba2045f">Demo</a></li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	<!--javascript files
+=============================================================-->
+	<script type="text/javascript" src="js/jQueryTween-aio-min.js"></script> <!-- JQUERY Tween Plugin -->
+	<script type="text/javascript" src="js/jquery.tabslet.min.js"></script> <!-- JQUERY Tab plugin-->
+	<script type="text/javascript" src="js/progressbar.min.js"></script> <!-- JQUERY Progressbar Plugin-->
+	<script type="text/javascript" src="js/jquery.simple-text-rotator.min.js"></script> <!-- JQUERY Text Rotator-->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script> <!-- Bootstrap file-->
+	<!-- <script src="http://ditu.google.cn/maps/api/js?key=AIzaSyBPNkCVoBW_Jzl6x-hgGU6e7QW1QMwKles"></script> -->
+	<script type="text/javascript" src='js/isotope.pkgd.min.js'></script>
+	<script type="text/javascript" src="js/custom.js"></script>
+</body>
+
+</html>
