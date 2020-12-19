@@ -1,0 +1,58 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic</title>
+  </head>
+  <body>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+      // 新建画布
+      let width = 400;
+      let height = 400;
+      let svg = d3
+        .select("body")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height);
+      // 画布周边的空白
+      let padding = { left: 30, right: 30, top: 20, bottom: 20 };
+
+      // 动态效果
+      var circle1 = svg
+        .append("circle")
+        .attr("cx", 50)
+        .attr("cy", 100)
+        .attr("r", 45)
+        .style("fill", "green");
+      var circle2 = svg
+        .append("circle")
+        .attr("cx", 140)
+        .attr("cy", 100)
+        .attr("r", 45)
+        .style("fill", "green");
+      var circle3 = svg
+        .append("circle")
+        .attr("cx", 50)
+        .attr("cy", 190)
+        .attr("r", 45)
+        .style("fill", "green");
+      //在1秒（1000毫秒）内将圆心坐标由100变为300
+      circle1.transition().duration(1000).attr("cx", 100);
+      //在1.5秒（1500毫秒）内将圆心坐标由100变为300，
+      //将颜色从绿色变为红色
+      circle2.transition().duration(1500).attr("cx", 190).style("fill", "red");
+      //在2秒（2000毫秒）内将圆心坐标由100变为300
+      //将颜色从绿色变为红色
+      //将半径从45变成25
+      //过渡方式采用bounce（在终点处弹跳几次）
+      circle3
+        .transition()
+        .duration(2000)
+        .ease("bounce")
+        .attr("cx", 100)
+        .style("fill", "red")
+        .attr("r", 25);
+    </script>
+  </body>
+</html>

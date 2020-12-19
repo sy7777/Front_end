@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HelloWorld</title>
+  </head>
+  <body>
+    <p>Hello World 1</p>
+    <p>Hello World 2</p>
+    <span>Hello World 3</span>
+    <span>Hello World 4</span>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+      let dom1 = document.querySelectorAll("p");
+      // for(let i = 0; i < dom1.length; i++){
+      //     let p = dom1.item(i);
+      //     console.log(p);
+      //     p.innerHTML = "I like dog."
+      // }
+      let str = "China";
+      let p = d3.select("body").selectAll("p");
+      //如果没有这一行就是undefined，绑定到数据集上
+      p.datum(str);
+      p.text((d, i) => {
+        return `${i}个元素是${d}`;
+      });
+      // let dataset = ["I like dog","I like cat"];
+      let div = d3.select("body").selectAll("p");
+      //如果没有这一行就是undefined，绑定到数据集上
+      // p.data(dataset).text((d,i)=>{
+      //     return d;
+      // })
+      p.style("color", "red");
+      var width = 300; //画布的宽度
+      var height = 300; //画布的高度
+
+      var svg = d3
+        .select("body") //选择文档中的body元素
+        .append("svg") //添加一个svg元素
+        .attr("width", width) //设定宽度
+        .attr("height", height); //设定高度
+      var dataset = [250, 210, 170, 130, 90]; //数据（表示矩形的宽度）
+      var rectHeight = 25; //每个矩形所占的像素高度(包括空白)
+
+      svg
+        .selectAll("rect") //选择svg内所有的矩形
+        .data(dataset) //绑定数组
+        .enter() //指定选择集的enter部分
+        .append("rect") //添加足够数量的矩形元素
+        .attr("x", 20)
+        .attr("y", function (d, i) {
+          return i * rectHeight;
+        })
+        .attr("width", function (d) {
+          return d;
+        })
+        .attr("height", rectHeight - 2)
+        .attr("fill", "steelblue");
+    </script>
+  </body>
+</html>

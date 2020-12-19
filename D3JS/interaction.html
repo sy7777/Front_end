@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+      var dataset = [250, 210, 170, 130, 90];
+      var width = 600; //画布的宽度
+      var height = 600; //画布的高度
+      let padding = { left: 30, right: 30, top: 20, bottom: 20 };
+      // X的比例尺
+      let xScale = d3.scale
+        .ordinal()
+        .domain(d3.range(dataset.length))
+        .rangeRoundBands([0, width - padding.left - padding.right]);
+
+      //y轴的比例尺
+      var yScale = d3.scale
+        .linear()
+        .domain([0, d3.max(dataset)])
+        .range([height - padding.top - padding.bottom, 0]);
+
+      var svg = d3
+        .select("body") //选择文档中的body元素
+        .append("svg") //添加一个svg元素
+        .attr("width", width) //设定宽度
+        .attr("height", height); //设定高度
+      var rectPadding = 4;
+      var rects = svg
+        .selectAll(".MyRect")
+        .data(dataset)
+        .enter()
+        .append("rect")
+        .attr("class", "MyRect") //把类里的 fill 属性清空
+        .attr(
+          "transform",
+          "translate(" + padding.left + "," + padding.top + ")"
+        )
+        .attr("x", function (d, i) {
+          return xScale(i) + rectPadding / 2;
+        })
+        .attr("y", function (d) {
+          return yScale(d);
+        })
+        .attr("width", xScale.rangeBand() - rectPadding)
+        .attr("height", function (d) {
+          return height - padding.top - padding.bottom - yScale(d);
+        })
+        .attr("fill", "steelblue") //填充颜色不要写在CSS里
+        // 监听器函数中都使用了 d3.select(this)，表示选择当前的元素，this 是当前的元素，要改变响应事件的元素时这么写就好。
+        .on("mouseover", function (d, i) {
+          d3.select(this).attr("fill", "yellow");
+        })
+        .on("mouseout", function (d, i) {
+          d3.select(this).transition().duration(500).attr("fill", "steelblue");
+        });
+    </script>
+  </body>
+</html>
