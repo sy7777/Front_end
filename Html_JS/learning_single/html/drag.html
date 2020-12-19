@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1{
+            width: 80px;
+            height: 80px;
+            background-color: aquamarine;
+            position: absolute;
+        }
+        .d2{
+            width: 80px;
+            height: 80px;
+            background-color: red;
+            position: absolute;
+            left: 160px;
+            top: 160px;
+        }
+    </style>
+</head>
+<body>
+    我是一段文字
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <script>
+        const divDom1 = document.querySelector(".d1");
+        const divDom2 = document.querySelector(".d2");
+        drag(divDom1)
+        drag(divDom2)
+        function drag(div){
+            div.onmousedown = function(e){
+           if( div.setCapture ){
+            div.setCapture()
+           };
+            let ol = e.clientX-div.offsetLeft;
+            let ot = e.clientY-div.offsetTop;
+
+            document.onmousemove = function(e){
+                div.style.left = (e.clientX-ol) + "px";
+                div.style.top = (e.clientY-ot) + "px";
+            }
+            // divDom.onmouseup = function(){这样有bug移动到div2时，松开鼠标没有作用，因为此时相当于鼠标在div2上面
+            document.onmouseup = function(){
+                document.onmousemove = null;
+                // alert("moved")
+                document.onmouseup = null;
+                // 浏览器拖拽有默认问题，文字会被一起拖走,用return false取消默认行为
+                return false;
+            }
+        }
+        }
+    </script>
+</body>
+</html>
