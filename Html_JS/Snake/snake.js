@@ -24,31 +24,20 @@ var interID;
 var tempID = false;
 
 startBtnDiv.onclick = function(){
-    // tempID = interID;
-    interID = "";
-/*     if(interID != ""){
-       console.log(interID)
-        return
-    } */
-/*     if (interID == interID+1){
-      return;
-    } */
+    clearInterval(interID)
     if(interID && tempID == true){
       return;
     }else{
       console.log(interID+"hhh")
       game();
-    }
-   
-    
-    
+    }  
 }
- pauseBtnDiv.onclick = function(){
+
+pauseBtnDiv.onclick = function(){
   // tempID = interID;
-    if(interID != ""){
+    // if(interID != ""){
         clearInterval(interID);
-       
-    }
+    // }
 } 
 function renderGrid() {
   for (var i = 0; i < 20; i++) {

@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <style>
+        .da{
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="da"></div>
+    <script>
+        const divDome1 = document.querySelector(".da");
+        // 火狐不支持这个事件，用
+        divDome1.scroll = function(){
+            alert("滚了")
+        }
+    </script>
+</body>
+</html>
