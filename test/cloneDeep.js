@@ -1,8 +1,7 @@
 function cloneDeep(sourceObj) {
-  if (!sourceObj || typeof sourceObj !== "object") {
+  if (!sourceObj || typeof sourceObj !== "object" ) {
     return sourceObj;
   }
-  // const newObj = {...sourceObj};
   const keys = Object.keys(sourceObj);
   const newObj = {};
   keys.forEach((key) => {
@@ -11,11 +10,6 @@ function cloneDeep(sourceObj) {
     } else {
       newObj[key] = cloneDeep(sourceObj[key]);
     }
-    // if(typeof sourceObj[key] !== "object"){
-    //     newObj[key] = sourceObj[key];
-    // }else{
-    //     newObj[key] = cloneDeep(sourceObj[key])
-    // }
   });
   return newObj;
 }
@@ -48,6 +42,7 @@ const person1 = {
   female: true,
   car: undefined,
   house: null,
+  s: Symbol(),
 };
 const cloned1 = cloneDeep2(person1);
 // console.log(person1);
@@ -55,7 +50,8 @@ console.log(cloned1);
 console.log(cloned1.friend === person2);
 console.log(cloned1.family === families);
 console.log(cloned1.family[1] === families[1]);
-console.log(cloneDeep2(person1));
+console.log(cloneDeep(person1));
 function test() {
   console.log("am test");
 }
+console.log( typeof person1.s);
