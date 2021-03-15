@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove</title>
+</head>
+<body>
+    <div class="image">
+        <img src="../Html_JS/learning_single/img/p1.jpg" alt="First" srcset="">
+        <button class="remove">X1</button>
+    </div>
+    <div class="image">
+        <img src="../Html_JS/learning_single/img/p2.jpg" alt="Second" srcset="">
+        <button class="remove">X2</button>
+    </div>
+
+    <script>
+        const imgDom = document.querySelectorAll(".image");
+        const buttonDom = document.querySelectorAll(".remove");
+        function setUp(dom){
+            // if(imgDom.length){
+            //     imgDom.forEach(value=>{
+            //         value.remove();
+            //     })
+            // }else{
+            //     alert("Nothing here!!!")
+            // }
+            //    buttonDom.addEventListener("click", setUp);
+            if(dom){
+                dom.remove();
+            }else{
+                alert("Nothing here!!!")
+            }
+        }
+        buttonDom.forEach(value=>{
+            value.addEventListener("click", ()=>{
+                setUp(value.parentNode)}
+                );       
+        })
+        // buttonDom[0].addEventListener();
+    </script>
+</body>
+</html>
