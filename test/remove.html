@@ -17,27 +17,36 @@
     <script>
         const imgDom = document.querySelectorAll(".image");
         const buttonDom = document.querySelectorAll(".remove");
-        function setUp(dom){
-            // if(imgDom.length){
-            //     imgDom.forEach(value=>{
-            //         value.remove();
-            //     })
+        // function setUp(dom){
+        //     if(dom){
+        //         dom.remove();
+        //     }else{
+        //         alert("Nothing here!!!")
+        //     }
+        // }
+        // buttonDom.forEach(value=>{
+        //     value.addEventListener("click", ()=>{
+        //         setUp(value.parentNode)}
+        //         );       
+        // })
+
+        function setUp(){
+            imgDom[0].remove();
+            // if(imgDom){
+            //     // imgDom.forEach(value=>{
+            //     //     value.remove();
+            //     // })
+                
             // }else{
             //     alert("Nothing here!!!")
             // }
-            //    buttonDom.addEventListener("click", setUp);
-            if(dom){
-                dom.remove();
-            }else{
-                alert("Nothing here!!!")
-            }
         }
         buttonDom.forEach(value=>{
             value.addEventListener("click", ()=>{
-                setUp(value.parentNode)}
+                
+                imgDom[0].setUp()}
                 );       
         })
-        // buttonDom[0].addEventListener();
     </script>
 </body>
 </html>
