@@ -31,22 +31,13 @@
         // })
 
         function setUp(){
-            imgDom[0].remove();
-            // if(imgDom){
-            //     // imgDom.forEach(value=>{
-            //     //     value.remove();
-            //     // })
-                
-            // }else{
-            //     alert("Nothing here!!!")
-            // }
+            buttonDom.forEach((dom)=>{
+                dom.addEventListener("click", ()=>{
+                    dom.parentNode?.remove?.();
+                })
+            })
         }
-        buttonDom.forEach(value=>{
-            value.addEventListener("click", ()=>{
-                
-                imgDom[0].setUp()}
-                );       
-        })
+        setUp();
     </script>
 </body>
 </html>
