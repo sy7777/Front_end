@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p id="name" style="color: brown;">Hello</p>
+    <button onclick="changeStyle()">Change style</button>
+    <script>
+        function changeStyle(){
+           const p = document.querySelector("#name");
+           console.log(p.style);
+            p.style.color = "green";
+            p.style.fontSize = "77px";
+        }
+        
+    </script>
+</body>
+</html>
